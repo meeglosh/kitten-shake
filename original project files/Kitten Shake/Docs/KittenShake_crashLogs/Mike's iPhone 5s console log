@@ -1,0 +1,297 @@
+
+========================
+ASL is here to serve you
+> 
+
+Feb 20 21:29:35  Reminders[1875] <Notice>: Cannot render using GPU because process is in background.
+Feb 20 21:29:35  Reminders[1875] <Notice>: Falling back to rendering using CPU.
+Feb 20 21:29:35  SpringBoard[16] <Notice>: 2014-02-20 21:29:35.332|SpringBoard|16|0x178c78680|(null): Sync running. Waiting for it to finish before checking for updates.
+Feb 20 21:29:44  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:29:44  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01c54000 -[hostWatcher handleSleepNotification:service:messageArgument:]: <hostWatcher: 0x14f51f150> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:61398] [fd=14]: kIOMessageCanSystemSleep
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01c54000 -[hostWatcher handleSleepNotification:service:messageArgument:]: <hostWatcher: 0x14f51f150> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:61398] [fd=14]: kIOMessageSystemWillSleep
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01e74000 -[hostWatcher runWatcher]: ended loop for <hostWatcher: 0x14f51f150> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:61398] [fd=14]
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01e74000 -[hostWatcher runWatcher]: Holding off sleep for at most 5 seconds
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01e74000 -[hostWatcher runWatcher]: sent SleepyTime
+Feb 20 21:29:49  CommCenter[60] <Notice>: Telling CSI to go low power.
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01e74000 -[hostWatcher runWatcher]: got sleep response <CFBasicHash 0x14f51ff70 [0x1967310c0]>{type = mutable dict, count = 1,
+	entries =>
+		3 : <CFString 0x14f51b2b0 [0x1967310c0]>{contents = "Command"} = <CFString 0x14f529a60 [0x1967310c0]>{contents = "NightNight"}
+	}
+Feb 20 21:29:49  lockdownd[25] <Notice>: 01c54000 -[hostWatcher invalidate]: invalidating host AA47EB16-107E-45C2-B2A6-8EAA28FED13E
+Feb 20 21:29:55  lockdownd[25] <Notice>: 00484000 __63-[hostWatcher handleSleepNotification:service:messageArgument:]_block_invoke: Allowing Sleep
+Feb 20 21:29:55  lockdownd[25] <Notice>: 00484000 -[hostWatcher dealloc]: dealloc <hostWatcher: 0x14f51f150> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:61398] [fd=14]
+Feb 20 21:29:55  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f620c80> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:62422)] [fd=16] [pid=847 (afcd fd=14)] [hb=942516687006]
+Feb 20 21:29:55  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f51dbc0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:61910)] [fd=15] [pid=847 (afcd fd=10)] [hb=942515437997]
+Feb 20 21:29:55  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f520210> [client=ath (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:62678)] [fd=18] [pid=846 (notification_proxy fd=5)] [hb=942518596749]
+Feb 20 21:29:55  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f51b1c0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:63446)] [fd=17] [pid=846 (notification_proxy fd=8)] [hb=942529494986]
+Feb 20 21:29:55  powerd[54] <Notice>:  Sleep: Using BATT (Charge:100%) 
+Feb 20 21:29:55  powerd[54] <Notice>: PM scheduled RTC wake event: WakeImmediate inDelta=439.92
+Feb 20 21:29:55  wifid[40] <Error>: _dispatchDriverAvailable: available 0, reason -528345084, subreason 0
+Feb 20 21:29:55  profiled[1884] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.104875 wlan.N[11013] AppleBCMWLANCore::setPowerStateGated():   powerState 0, fStateFlags 0x30007, dev 0xffffff80009d8000 (this 0, provider 1)
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.104899 wlan.N[11014] AppleBCMWLANCore::powerOffSystem():  : Powering Off and sleeping
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.104913 wlan.N[11015] AppleBCMWLANCore::powerOff():  fStateFlags(30006)
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.115533 wlan.A[11016] AppleBCMWLANCore::configureDMS(): Added Traffic Classifer 4
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.117811 wlan.A[11017] Active Ports:5353 
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.121479 wlan.A[11018] AppleBCMWLANCore::configurePktFilters():  Unicast IPv4 filter enabled (ID=102)
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.129517 wlan.A[11019] AppleBCMWLANCore::configurePktFilters():  ARP Offload enabled 
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.135555 wlan.A[11020] AppleBCMWLANCore::configurePktFilters():  Neighbor Discovery Offload Enabled in F/W
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.139533 wlan.A[11021] AppleBCMWLANCore::configurePktFilters(): Enabled WOMP filter  (ID=104) (ID=105)
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.151733 wlan.A[11022] AppleBCMWLANCore::configureExcessPMAlertParams():  enter wow enable PM Alert period 60 sec, excess power percent 75
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.163781 wlan.N[11023] AppleBCMWLAN Sleeping on BSS:   @0xffffff8002a08000 BSSID=00:25:bc:8a:6a:bd rssi=-46 noise=-92  snr= 25 cca= 15 rate=65 (100%) channel=11 encryption=0xc ap=1 failures=  0 age=313 ssid[12]='maison rouge'
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.163811 wlan.N[11024] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Forced 0
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.165726 wlan.N[11025] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Disabled
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.165743 wlan.N[11026] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Requesting disable
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.165759 wlan.C[11027] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Proptx state 0
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.167727 wlan.N[11028] AppleBCMWLANCore::powerOff():  Associated & WoW enabled, WiFi will remain up
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.167792 wlan.N[11029] AppleBCMWLANCore::powerOff():  Ready to power off with WoW
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.168075 wlan.N[11030] AppleBCMWLANCore::setPowerStateGated():   powerState 0, fStateFlags 0x20002, dev 0xffffff8000845000 (this 1, provider 0)
+Feb 20 21:29:55  kernel[0] <Debug>: 039339.168091 wlan.N[11031] AppleBCMWLANCore::setPowerStateGated():  Already powered off, ignoring
+Feb 20 21:29:55  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = true, _controllerLostPower = 0
+Feb 20 21:29:55  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = false, _controllerLostPower = 0
+Feb 20 21:29:55  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 3758096912
+Feb 20 21:29:55  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 0 fDisplay: 0 -> 0
+Feb 20 21:29:55  kernel[0] <Debug>: AppleOscarProcessor[0xffffff8000951000]::setPowerStateGated: 39339188498625: setting power state powerStateOrdinal=0
+Feb 20 21:29:55  kernel[0] <Debug>: sleeping waiting for endpoint to wake up again.
+Feb 20 21:29:55  kernel[0] <Debug>: AppleSEP: sleep ART ready, saving
+Feb 20 21:29:55  kernel[0] <Debug>: ART: 30 5f 02 01 00 30 38 02 02 6b 06 04 14 e0 7a 3b 9d 88 18 69 9e 16 31 b2 a8 14 02 c6 b4 56 5b c5 2c 04 14 53 41 ea 49 89 6c 1e fb 72 4e 52 0e 21 02 ec e8 38 cc 63 0a 04 00 31 04 c0 02 01 ea 04 20 ee b8 b0 98 e5 4b 85 63 24 61 b4 ac fe 1d a9 d6 1a 26 3e 6f 5d 7f 1a 5c 33 f8 e2 be 1c c0 c0 83 
+Feb 20 21:29:55  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 0
+Feb 20 21:29:55  kernel[0] <Debug>: ASPSEPNotifier::message - kSEPNotifyOK2Sleep
+Feb 20 21:30:38  kernel[0] <Debug>: AppleS5L8960XPerformanceController::_restorePMGRState: _pcPSRegs[2]=> 0x0
+Feb 20 21:30:38  CommCenter[60] <Notice>: Telling CSI to exit low power.
+Feb 20 21:30:38  configd[42] <Notice>: network changed: v4(en0:10.0.1.14, pdp_ip0) DNS Proxy
+Feb 20 21:30:38  kernel[0] <Debug>: AppleS5L8960XPerformanceController::_restorePMGRState: _pcPSRegs[1]=> 0x1C0706
+Feb 20 21:30:38  kernel[0] <Debug>: AppleS5L8960XPerformanceController::_restorePMGRState: _pcPSRegs[0]=> 0x48081B8
+Feb 20 21:30:38  kernel[0] <Debug>: pmu wake events: baseband
+Feb 20 21:30:38  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 0 fDisplay: 0 -> 0
+Feb 20 21:30:38  kernel[0] <Debug>: AppleOscarProcessor[0xffffff8000951000]::setPowerStateGated: 39339738782750: setting power state powerStateOrdinal=1
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.739621 wlan.N[11032] AppleBCMWLANCore::setPowerStateGated():   powerState 1, fStateFlags 0x20002, dev 0xffffff8000845000 (this 1, provider 0)
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.739632 wlan.N[11033] AppleBCMWLANCore::powerOnSystem():  : Powering On
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.739644 wlan.N[11034] AppleBCMWLANCore::powerOn():  stateFlags(20003)
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.739669 wlan.N[11035] AppleBCMWLANBusInterfaceHSIC::doReconnectBus():  Port Action ACTION_START
+Feb 20 21:30:38  kernel[0] <Debug>: AppleD2045PMUPowerSource: AppleUSBCableDetect 0
+Feb 20 21:30:38  kernel[0] <Debug>: AppleD2045PMUPowerSource: AppleUSBCableType Detached
+Feb 20 21:30:38  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = true, _controllerLostPower = 0
+Feb 20 21:30:38  wifid[40] <Error>: _dispatchDriverAvailable: available 1, reason -528345085, subreason 0
+Feb 20 21:30:38  CommCenter[60] <Notice>: Release assertion for reason: operation queue is empty
+Feb 20 21:30:38  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 3758096944
+Feb 20 21:30:38  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 1
+Feb 20 21:30:38  kernel[0] <Debug>: ASPSEPNotifier::message - kSEPNotifyOK2Wrap
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.943945 wlan.N[11036] AppleBCMWLANBusInterfaceHSIC::attachBusGated():  AppleBCMWLANBusInterfaceHSIC (0xffffff80009d8000) -->>-- AppleBCMWLANBusInterfaceHSICShim (0xffffff800185a400) 
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.947250 wlan.C[11037] AppleBCMWLANPacketTransmitter::enablePropTxStatus():  Proptx state 1
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.949943 wlan.A[11038] AppleBCMWLANCore::processPowerStatsChangesInSleep(): WoW (0x6) power report: MpcDuration 0ms PmDuration 42776ms SleepDuration 42972ms DutyCycle 0.4%
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.950013 wlan.A[11039] AppleBCMWLANCore::powerOn():  Tearing down WoW mode
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.961791 wlan.A[11040] AppleBCMWLANCore::configureAssociatedWNMModeExit(): Terminated WNM Service
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.961817 wlan.A[11041] Active Ports:
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.965935 wlan.A[11042] AppleBCMWLANCore::unConfigurePktFilters():  Disabled IPv4 packet filter
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.967837 wlan.A[11043] AppleBCMWLANCore::unConfigurePktFilters():  Disabled ARP Offload:
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.979788 wlan.A[11044] AppleBCMWLANCore::unConfigurePktFilters():  Disabled Magic packet filter
+Feb 20 21:30:38  kernel[0] <Debug>: 039339.985968 wlan.N[11045] AppleBCMWLAN Woke on same BSS:  @0xffffff8002a08000 BSSID=00:25:bc:8a:6a:bd rssi=-46 noise=-92  snr= 25 cca= 15 rate=65 (100%) channel=11 encryption=0xc ap=1 failures=  0 age=313 ssid[12]='maison rouge'
+Feb 20 21:30:38  kernel[0] <Debug>: en0: BSSID changed to 00:25:bc:8a:6a:bd
+Feb 20 21:30:38  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = true, _controllerLostPower = 0
+Feb 20 21:30:38  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = false, _controllerLostPower = 0
+Feb 20 21:30:38  powerd[54] <Notice>: Wake [CDNVA]  : Using BATT (Charge:100%)
+Feb 20 21:30:38  configd[42] <Notice>: network changed: v4(en0:10.0.1.14, pdp_ip0) DNS Proxy
+Feb 20 21:30:38  lockdownd[25] <Notice>: 98fc32a0 _did_wake_for_wifi_wake_packet: we weren't woken by magic
+Feb 20 21:30:38  SpringBoard[16] <Warning>: BBBehaviorOverride: Transition date should be after provided date 2013-11-26 15:21:04 +0000.
+Feb 20 21:30:38  powerd[54] <Notice>: Kernel: Response from lockdownd is slow (powercaps:0x9)
+Feb 20 21:30:38  SpringBoard[16] <Warning>: BBBehaviorOverride: Transition date should be after provided date 2014-02-21 02:30:38 +0000.
+Feb 20 21:30:38  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:30:38  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:30:39  wifid[40] <Error>: WiFi:[414642639.341240]: Disable WoW requested by "apsd"
+Feb 20 21:30:39  wifid[40] <Error>: WiFi:[414642639.343929]: Unable to dispatch WowStateChanged message to client SpringBoard (268435460)
+Feb 20 21:30:39  wifid[40] <Error>: WiFi:[414642639.345002]: Unable to dispatch WowStateChanged message to client dataaccessd (268435460)
+Feb 20 21:30:39  wifid[40] <Error>: WiFi:[414642639.345933]: Unable to dispatch WowStateChanged message to client lockdownd (268435460)
+Feb 20 21:30:39  wifid[40] <Error>: WiFi:[414642639.349796]: Unable to dispatch WowStateChanged message to client dataaccessd (268435460)
+Feb 20 21:30:39  wifid[40] <Error>: WiFi:[414642639.350994]: Unable to dispatch WowStateChanged message to client itunesstored (268435460)
+Feb 20 21:30:39  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 21:30:39  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 21:30:39  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 21:30:39  lockdownd[25] <Notice>: 00484000 -[hostWatcher initWithCheckinGoop:]: created <hostWatcher: 0x14f620f20> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64470] [fd=14]
+Feb 20 21:30:39  lockdownd[25] <Notice>: 01e74000 -[watchedServiceInfo logService:]: first service <watchedServiceInfo: 0x14f521bf0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64982)] [fd=15] [pid=847 (afcd fd=10)] [hb=944190632792]
+Feb 20 21:30:39  lockdownd[25] <Notice>: 01e74000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f521bf0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64982)] [fd=15] [pid=847 (afcd fd=10)] [hb=944190632792]
+Feb 20 21:30:39  lockdownd[25] <Notice>: 01f84000 -[hostWatcher runWatcher]: starting loop for <hostWatcher: 0x14f620f20> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64470] [fd=14]
+Feb 20 21:30:39  lockdownd[25] <Notice>: 01c54000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f517560> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:65494)] [fd=16] [pid=847 (afcd fd=14)] [hb=944192032135]
+Feb 20 21:30:39  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 21:30:39  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 21:30:39  lockdownd[25] <Notice>: 01e74000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f623760> [client=ath (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:215)] [fd=18] [pid=846 (notification_proxy fd=5)] [hb=944193333111]
+Feb 20 21:30:39  lockdownd[25] <Notice>: 01c54000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f521d20> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:727)] [fd=13] [pid=848 (mobile_assertion_agent fd=6)] [hb=944194549431]
+Feb 20 21:30:39  lockdownd[25] <Notice>: 00484000 special_case_get: MGCopyAnswer(kMGQMobileEquipmentIdentifier) returned NULL
+Feb 20 21:30:39  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 21:30:39  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 21:30:39  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x626)
+Feb 20 21:30:40  lockdownd[25] <Notice>: 01bcc000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f615ba0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:983)] [fd=17] [pid=846 (notification_proxy fd=8)] [hb=944202038577]
+Feb 20 21:30:40  mobile_assertion_agent[848] <Notice>: service_one_connection: Connection closed for client iTunes.
+Feb 20 21:30:40  lockdownd[25] <Notice>: 01bcc000 -[watchedServiceInfo logService:]: Freeing heartbeat <watchedServiceInfo: 0x14f521d20> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:727)] [fd=13] [pid=848 (mobile_assertion_agent fd=6)] [hb=944194549431]
+Feb 20 21:30:40  lockdownd[25] <Notice>: 01bcc000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f521d20> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:727)] [fd=13] [pid=848 (mobile_assertion_agent fd=6)] [hb=944194549431]
+Feb 20 21:30:54  searchd[1889] <Warning>: Finished getting 86 applications, took 0.333875 seconds
+Feb 20 21:30:54  searchd[1889] <Warning>: Indexed all records in 0.54s
+Feb 20 21:30:55  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 21:30:55  kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 21:30:55  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->255
+Feb 20 21:30:55  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 21:30:55  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 21:30:56  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 21:30:56  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 21:31:10  lockdownd[25] <Notice>: 00484000 -[hostWatcher handleSleepNotification:service:messageArgument:]: <hostWatcher: 0x14f620f20> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64470] [fd=14]: kIOMessageCanSystemSleep
+Feb 20 21:31:10  lockdownd[25] <Notice>: 00484000 -[hostWatcher handleSleepNotification:service:messageArgument:]: <hostWatcher: 0x14f620f20> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64470] [fd=14]: kIOMessageSystemWillSleep
+Feb 20 21:31:10  lockdownd[25] <Notice>: 01f84000 -[hostWatcher runWatcher]: ended loop for <hostWatcher: 0x14f620f20> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64470] [fd=14]
+Feb 20 21:31:10  lockdownd[25] <Notice>: 01f84000 -[hostWatcher runWatcher]: Holding off sleep for at most 5 seconds
+Feb 20 21:31:10  lockdownd[25] <Notice>: 01f84000 -[hostWatcher runWatcher]: sent SleepyTime
+Feb 20 21:31:10  CommCenter[60] <Notice>: Telling CSI to go low power.
+Feb 20 21:31:10  lockdownd[25] <Notice>: 01f84000 -[hostWatcher runWatcher]: got sleep response <CFBasicHash 0x14f61ca30 [0x1967310c0]>{type = mutable dict, count = 1,
+	entries =>
+		3 : <CFString 0x14f60add0 [0x1967310c0]>{contents = "Command"} = <CFString 0x14f61f360 [0x1967310c0]>{contents = "NightNight"}
+	}
+Feb 20 21:31:10  lockdownd[25] <Notice>: 00484000 -[hostWatcher invalidate]: invalidating host AA47EB16-107E-45C2-B2A6-8EAA28FED13E
+Feb 20 21:31:15  lockdownd[25] <Notice>: 00484000 __63-[hostWatcher handleSleepNotification:service:messageArgument:]_block_invoke: Allowing Sleep
+Feb 20 21:31:15  lockdownd[25] <Notice>: 00484000 -[hostWatcher dealloc]: dealloc <hostWatcher: 0x14f620f20> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64470] [fd=14]
+Feb 20 21:31:15  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f521bf0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:64982)] [fd=15] [pid=847 (afcd fd=10)] [hb=944190632792]
+Feb 20 21:31:15  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f623760> [client=ath (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:215)] [fd=18] [pid=846 (notification_proxy fd=5)] [hb=944193333111]
+Feb 20 21:31:15  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f517560> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:65494)] [fd=16] [pid=847 (afcd fd=14)] [hb=944192032135]
+Feb 20 21:31:15  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f615ba0> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:983)] [fd=17] [pid=846 (notification_proxy fd=8)] [hb=944202038577]
+Feb 20 21:31:16  powerd[54] <Notice>:  Sleep: Using BATT (Charge:100%) 
+Feb 20 21:31:16  powerd[54] <Notice>: PM scheduled RTC wake event: WakeImmediate inDelta=64.00
+Feb 20 21:31:16  wifid[40] <Error>: _dispatchDriverAvailable: available 0, reason -528345084, subreason 0
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.785531 wlan.N[11046] AppleBCMWLANCore::setPowerStateGated():   powerState 0, fStateFlags 0x30007, dev 0xffffff80009d8000 (this 0, provider 1)
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.785556 wlan.N[11047] AppleBCMWLANCore::powerOffSystem():  : Powering Off and sleeping
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.785570 wlan.N[11048] AppleBCMWLANCore::powerOff():  fStateFlags(30006)
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.799233 wlan.A[11049] AppleBCMWLANCore::ignoreUnicastPackets(): LPAS:Ignore Unicast Packets success
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.801311 wlan.A[11050] AppleBCMWLANCore::configurePktFilters():  Unicast IPv4 filter enabled (ID=102)
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.809321 wlan.A[11051] AppleBCMWLANCore::configurePktFilters():  ARP Offload enabled 
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.815164 wlan.A[11052] AppleBCMWLANCore::configurePktFilters():  Neighbor Discovery Offload Enabled in F/W
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.819159 wlan.A[11053] AppleBCMWLANCore::configurePktFilters(): Enabled WOMP filter  (ID=104) (ID=105)
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.831340 wlan.A[11054] AppleBCMWLANCore::configureExcessPMAlertParams():  enter wow enable PM Alert period 600 sec, excess power percent 3
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.835342 wlan.A[11055] AppleBCMWLANCore::configureLPASEntry(): Configured Low Power Associated Sleep Mode
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.847373 wlan.N[11056] AppleBCMWLAN Sleeping on BSS:   @0xffffff8002a08000 BSSID=00:25:bc:8a:6a:bd rssi=-50 noise=-93  snr= 25 cca= 25 rate=65 (100%) channel=11 encryption=0xc ap=1 failures=  0 age=351 ssid[12]='maison rouge'
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.847402 wlan.N[11057] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Forced 0
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.849317 wlan.N[11058] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Disabled
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.849335 wlan.N[11059] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Requesting disable
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.849351 wlan.C[11060] AppleBCMWLANPacketTransmitter::disablePropTxStatus():  Proptx state 0
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.851368 wlan.N[11061] AppleBCMWLANCore::powerOff():  Low Power Associated Sleep Enabled
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.851430 wlan.N[11062] AppleBCMWLANCore::powerOff():  Ready to power off with WoW
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.851705 wlan.N[11063] AppleBCMWLANCore::setPowerStateGated():   powerState 0, fStateFlags 0x20002, dev 0xffffff8000845000 (this 1, provider 0)
+Feb 20 21:31:16  kernel[0] <Debug>: 039377.851722 wlan.N[11064] AppleBCMWLANCore::setPowerStateGated():  Already powered off, ignoring
+Feb 20 21:31:16  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = true, _controllerLostPower = 0
+Feb 20 21:31:16  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = false, _controllerLostPower = 0
+Feb 20 21:31:16  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 3758096912
+Feb 20 21:31:16  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 0 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 0 fDisplay: 0 -> 0
+Feb 20 21:31:16  kernel[0] <Debug>: AppleOscarProcessor[0xffffff8000951000]::setPowerStateGated: 39377872196375: setting power state powerStateOrdinal=0
+Feb 20 21:31:16  kernel[0] <Debug>: AppleSEP: sleep ART ready, saving
+Feb 20 21:31:16  kernel[0] <Debug>: ART: 30 5f 02 01 00 30 38 02 02 6b 07 04 14 e0 7a 3b 9d 88 18 69 9e 16 31 b2 a8 14 02 c6 b4 56 5b c5 2c 04 14 9c 79 29 60 e2 2d 53 1a a7 3e 04 ac a4 83 8f 46 78 39 73 c7 04 00 31 04 c0 02 01 ea 04 20 3f f6 93 16 b2 a0 91 44 be c8 aa 49 ae 2b fd 03 23 94 6e 2b 91 49 0f f6 bd d7 ea 34 e5 bb 53 a5 
+Feb 20 21:31:16  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 0
+Feb 20 21:31:16  kernel[0] <Debug>: ASPSEPNotifier::message - kSEPNotifyOK2Sleep
+Feb 20 21:31:29  kernel[0] <Debug>: AppleS5L8960XPerformanceController::_restorePMGRState: _pcPSRegs[2]=> 0x0
+Feb 20 21:31:29  kernel[0] <Debug>: AppleS5L8960XPerformanceController::_restorePMGRState: _pcPSRegs[1]=> 0x1C0706
+Feb 20 21:31:29  kernel[0] <Debug>: AppleS5L8960XPerformanceController::_restorePMGRState: _pcPSRegs[0]=> 0x48081B8
+Feb 20 21:31:29  kernel[0] <Debug>: pmu wake events: usb dock
+Feb 20 21:31:29  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 0 fDisplay: 0 -> 0
+Feb 20 21:31:29  CommCenter[60] <Notice>: Telling CSI to exit low power.
+Feb 20 21:31:29  configd[42] <Notice>: network changed: v4(en0:10.0.1.14, pdp_ip0) DNS Proxy
+Feb 20 21:31:29  kernel[0] <Debug>: AppleOscarProcessor[0xffffff8000951000]::setPowerStateGated: 39378423707750: setting power state powerStateOrdinal=1
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.424575 wlan.N[11065] AppleBCMWLANCore::setPowerStateGated():   powerState 1, fStateFlags 0x20002, dev 0xffffff8000845000 (this 1, provider 0)
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.424587 wlan.N[11066] AppleBCMWLANCore::powerOnSystem():  : Powering On
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.424598 wlan.N[11067] AppleBCMWLANCore::powerOn():  stateFlags(20003)
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.424608 wlan.N[11068] AppleBCMWLANBusInterfaceHSIC::doReconnectBus():  Port Action ACTION_START
+Feb 20 21:31:29  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = true, _controllerLostPower = 0
+Feb 20 21:31:29  kernel[0] <Debug>: AppleD2045PMUPowerSource: AppleUSBCableDetect 1
+Feb 20 21:31:29  kernel[0] <Debug>: AppleD2045PMUPowerSource: AppleUSBCableType USBHost
+Feb 20 21:31:29  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 3758096944
+Feb 20 21:31:29  wifid[40] <Error>: _dispatchDriverAvailable: available 1, reason -528345085, subreason 0
+Feb 20 21:31:29  kernel[0] <Debug>: ASPSEPNotifier::message - msg = 1
+Feb 20 21:31:29  kernel[0] <Debug>: ASPSEPNotifier::message - kSEPNotifyOK2Wrap
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.624032 wlan.N[11069] AppleBCMWLANBusInterfaceHSIC::attachBusGated():  AppleBCMWLANBusInterfaceHSIC (0xffffff80009d8000) -->>-- AppleBCMWLANBusInterfaceHSICShim (0xffffff8001a01d00) 
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.627002 wlan.C[11070] AppleBCMWLANPacketTransmitter::enablePropTxStatus():  Proptx state 1
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.629929 wlan.A[11071] AppleBCMWLANCore::processPowerStatsChangesInSleep(): LPAS (0x5) power report: MpcDuration 0ms PmDuration 12904ms SleepDuration 12993ms DutyCycle 0.6% RoamScanDuration 0ms ConnectTime 0ms AvailableRoamTime 891880ms
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.630003 wlan.A[11072] AppleBCMWLANCore::powerOn():  Tearing down WoW mode
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.646033 wlan.A[11073] Active Ports:
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.650244 wlan.A[11074] AppleBCMWLANCore::unConfigurePktFilters():  Disabled IPv4 packet filter
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.651792 wlan.A[11075] AppleBCMWLANCore::unConfigurePktFilters():  Disabled ARP Offload:
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.664801 wlan.A[11076] AppleBCMWLANCore::unConfigurePktFilters():  Disabled Magic packet filter
+Feb 20 21:31:29  kernel[0] <Debug>: 039378.671367 wlan.N[11077] AppleBCMWLAN Woke on same BSS:  @0xffffff8002a08000 BSSID=00:25:bc:8a:6a:bd rssi=-50 noise=-93  snr= 25 cca= 25 rate=65 (100%) channel=11 encryption=0xc ap=1 failures=  0 age=352 ssid[12]='maison rouge'
+Feb 20 21:31:29  kernel[0] <Debug>: en0: BSSID changed to 00:25:bc:8a:6a:bd
+Feb 20 21:31:29  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = true, _controllerLostPower = 0
+Feb 20 21:31:29  kernel[0] <Debug>: IO80211VirtualInterface::handleSIOCSIFFLAGS: ( flags & IFF_UP ) = false, _controllerLostPower = 0
+Feb 20 21:31:29  configd[42] <Notice>: network changed: v4(en0:10.0.1.14, pdp_ip0) DNS Proxy
+Feb 20 21:31:29  powerd[54] <Notice>: Wake [CDNVA]  : Using BATT (Charge:100%)
+Feb 20 21:31:29  CommCenter[60] <Notice>: Release assertion for reason: operation queue is empty
+Feb 20 21:31:29  lockdownd[25] <Notice>: 98fc32a0 _did_wake_for_wifi_wake_packet: we weren't woken by magic
+Feb 20 21:31:29  SpringBoard[16] <Warning>: BBBehaviorOverride: Transition date should be after provided date 2013-11-26 15:21:04 +0000.
+Feb 20 21:31:29  powerd[54] <Notice>: Kernel: Response from lockdownd is slow (powercaps:0x9)
+Feb 20 21:31:29  SpringBoard[16] <Warning>: BBBehaviorOverride: Transition date should be after provided date 2014-02-21 02:31:29 +0000.
+Feb 20 21:31:30  lockdownd[25] <Notice>: 01cdc000 -[hostWatcher initWithCheckinGoop:]: created <hostWatcher: 0x14f51dcd0> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:2519] [fd=14]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: first service <watchedServiceInfo: 0x14f51e320> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:3543)] [fd=13] [pid=847 (afcd fd=10)] [hb=945113931888]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 01f84000 -[hostWatcher runWatcher]: starting loop for <hostWatcher: 0x14f51dcd0> [AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:2519] [fd=14]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f51e320> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:3543)] [fd=13] [pid=847 (afcd fd=10)] [hb=945113931888]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f61b400> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:4055)] [fd=16] [pid=847 (afcd fd=14)] [hb=945115361051]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 01bcc000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f61e910> [client=ath (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:3799)] [fd=18] [pid=846 (notification_proxy fd=5)] [hb=945115827400]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 00484000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f511e10> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:4567)] [fd=15] [pid=848 (mobile_assertion_agent fd=6)] [hb=945118407273]
+Feb 20 21:31:30  lockdownd[25] <Notice>: 98fc32a0 _bump_connection_count: connectionCount now 31 usbHostConnected true pairableHostConnected false unpairedPtpAllowed false
+Feb 20 21:31:30  lockdownd[25] <Notice>: 98fc32a0 _bump_connection_count: connectionCount now 32 usbHostConnected true pairableHostConnected true unpairedPtpAllowed false
+Feb 20 21:31:30  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 21:31:30  lockdownd[25] <Notice>: 01cdc000 special_case_get: MGCopyAnswer(kMGQMobileEquipmentIdentifier) returned NULL
+Feb 20 21:31:30  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 21:31:30  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 21:31:30  lockdownd[25] <Notice>: 01c54000 set_response_error: handle_get_value GetProhibited
+Feb 20 21:31:30  lockdownd[25] <Notice>: 0211c000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f624140> [client=Xcode (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:5079)] [fd=23] [pid=1892 (gputoolsd fd=5)] [hb=945126408708]
+Feb 20 21:31:30  ptpd[1893] <Error>: ptpd: startResponder
+Feb 20 21:31:31  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 21:31:31  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01c54000 special_case_get: MGCopyAnswer(kMGQReleaseType) returned NULL
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01c54000 special_case_get: MGCopyAnswer(kMGQSDIOProductInfo) returned NULL
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01c54000 special_case_get: MGCopyAnswer(kMGQSDIOManufacturerTuple) returned NULL
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01c54000 special_case_get: MGCopyAnswer(kMGQBasebandBoardSnum) returned NULL
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01c54000 special_case_get: MGCopyAnswer(kMGQWirelessBoardSnum) returned NULL
+Feb 20 21:31:31  ptpd[1893] <Notice>: Photo library available
+Feb 20 21:31:31  ptpd[1893] <Notice>: PTP interface has been activated at high speed.
+Feb 20 21:31:31  lockdownd[25] <Notice>: 0200c000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f61e010> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:5591)] [fd=22] [pid=846 (notification_proxy fd=8)] [hb=945133435146]
+Feb 20 21:31:31  accountsd[87] <Notice>: 2014-02-20 21:31:31.147 accountsd[87:17315]: Cannot check access to a private account type: (null)
+Feb 20 21:31:31  mobile_assertion_agent[848] <Notice>: service_one_connection: Connection closed for client iTunes.
+Feb 20 21:31:31  lockdownd[25] <Notice>: 0200c000 -[watchedServiceInfo logService:]: Freeing heartbeat <watchedServiceInfo: 0x14f511e10> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:4567)] [fd=15] [pid=848 (mobile_assertion_agent fd=6)] [hb=945118407273]
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01c54000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f511e10> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:4567)] [fd=15] [pid=848 (mobile_assertion_agent fd=6)] [hb=945118407273]
+Feb 20 21:31:31  lockdownd[25] <Notice>: 0211c000 -[watchedServiceInfo logService:]: Watching <watchedServiceInfo: 0x14f52c360> [client=Xcode (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:5847)] [fd=15] [pid=846 (notification_proxy fd=10)] [hb=945134982605]
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQMobileEquipmentIdentifier) returned NULL
+Feb 20 21:31:31  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 21:31:31  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 21:31:31  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x624)
+Feb 20 21:31:31  profiled[1896] <Notice>: (Note ) profiled: Service starting...
+Feb 20 21:31:31  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQMobileEquipmentIdentifier) returned NULL
+Feb 20 21:31:31  mobile_assertion_agent[848] <Notice>: service_one_connection: Connection closed for client iTunes.
+Feb 20 21:31:31  lockdownd[25] <Notice>: 0211c000 -[watchedServiceInfo logService:]: Freeing heartbeat <watchedServiceInfo: 0x14f61e010> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:5591)] [fd=22] [pid=846 (notification_proxy fd=8)] [hb=945133435146]
+Feb 20 21:31:31  lockdownd[25] <Notice>: 0200c000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f61e010> [client=iTunes (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:5591)] [fd=22] [pid=846 (notification_proxy fd=8)] [hb=945133435146]
+Feb 20 21:31:31  backupd[1894] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 21:31:31  DTFetchSymbols[1897] <Notice>: Found paths:
+Feb 20 21:31:31  DTFetchSymbols[1897] <Notice>: /usr/lib/dyld
+Feb 20 21:31:31  DTFetchSymbols[1897] <Notice>: /System/Library/Caches/com.apple.dyld/dyld_shared_cache_arm64
+Feb 20 21:31:31  DTFetchSymbols[1897] <Notice>: /System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7s
+Feb 20 21:31:39 Kenzora-iFone backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 21:31:39 Kenzora-iFone kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 21:31:39 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 6->255
+Feb 20 21:31:40 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 21:31:40 Kenzora-iFone backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 21:31:40 Kenzora-iFone kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 21:31:40 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 21:31:40 Kenzora-iFone gputoolsd[1892] <Error>: <DYLockdownTransport: 0x14fe05ae0>: read io failure: Input/output error (5)
+Feb 20 21:31:41 Kenzora-iFone lockdownd[25] <Notice>: 01bcc000 __43-[watchedServiceInfo initWithWatchCommand:]_block_invoke: Cleaning up item 0x14f624140 for pid 1892
+Feb 20 21:31:41 Kenzora-iFone lockdownd[25] <Notice>: 01bcc000 -[watchedServiceInfo logService:]: dealloc <watchedServiceInfo: 0x14f624140> [client=Xcode (AA47EB16-107E-45C2-B2A6-8EAA28FED13E fe80::9227:e4ff:fef4:4004:5079)] [fd=23] [pid=1892 (gputoolsd fd=5)] [hb=945126408708]
+Feb 20 21:31:42 Kenzora-iFone profiled[1896] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:31:59 Kenzora-iFone backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 21:31:59 Kenzora-iFone backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 21:31:59 Kenzora-iFone kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 21:31:59 Kenzora-iFone wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:31:59 Kenzora-iFone wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:31:59 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 21:32:00 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 21:32:00 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 21:32:00 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 21:32:00 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x2b3)
+Feb 20 21:32:08 Kenzora-iFone backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 21:32:08 Kenzora-iFone kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 21:32:08 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 6->255
+Feb 20 21:32:09 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 21:32:09 Kenzora-iFone backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 21:32:09 Kenzora-iFone atc[1899] <Warning>: {MediaLibrary} Database validation succeeded
+Feb 20 21:32:09 Kenzora-iFone kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 21:32:09 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 21:32:23 Kenzora-iFone geod[838] <Warning>: Can't get bundle identifier for process 933

@@ -1,0 +1,27 @@
+# Xcode
+build/
+DerivedData/
+*.xcworkspace/
+!default.xcworkspace
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.moved-aside
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods (not used, but ignore just in case)
+Pods/
+
+# macOS
+.DS_Store
+
+# XcodeGen output (regenerate with `xcodegen generate`)
+KittenShake/KittenShake.xcodeproj/
+
+# Simulator / build artifacts
+*.ipa
+*.dSYM.zip
+*.dSYM

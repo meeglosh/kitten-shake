@@ -1,0 +1,302 @@
+
+========================
+ASL is here to serve you
+> 
+
+Feb 20 21:46:04  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 21:46:04  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 21:46:04  SpringBoard[16] <Warning>: [MPUNowPlayingController] Not registered for now playing notifications. Ignoring call to -unregisterForNotifications.
+Feb 20 21:46:04  SpringBoard[16] <Notice>: (Note ) MC: Locking device.
+Feb 20 21:46:04  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:46:04  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:46:04  SpringBoard[16] <Error>: __MKBAssertionFinalize: __MKBAssertionFinalize(0x170836680)
+Feb 20 21:46:04  SpringBoard[16] <Error>: MKBDeviceLockAssertion: MKBDeviceLockAssertion  (asserttype:4999832 with error 1)
+Feb 20 21:46:04  profiled[1922] <Notice>: (Note ) profiled: Service starting...
+Feb 20 21:46:04  accountsd[87] <Notice>: 2014-02-20 21:46:04.749 accountsd[87:12603]: Cannot check access to a private account type: (null)
+Feb 20 21:46:04  touchsetupd[115] <Warning>: WPTransfer deallocing
+Feb 20 21:46:04  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:46:05  kernel[0] <Debug>: AppleKeyStore: operation failed (pid: 16 sel: 26 ret: e00002e2)
+Feb 20 21:46:05  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 21:46:05  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 21:46:05  backupd[1923] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 21:46:14  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:46:14  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 21:46:25  profiled[1922] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:46:30  searchd[1915] <Warning>: Indexed all records in 0.15s
+Feb 20 21:46:40  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:40  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:41  kernel[0] <Debug>: virtual void AppleMobileADBE0::swap_begin(), !fControllerPowerState
+Feb 20 21:46:44  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 21:46:44  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 21:46:44  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 21:46:44  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 21:46:44  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 21:46:45  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 21:46:45  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 21:46:45  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x627)
+Feb 20 21:46:47  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:47  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:48  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:46:49  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:46:49  kernel[0] <Debug>: AppleKeyStore:Sending lock change 0
+Feb 20 21:46:49  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->3
+Feb 20 21:46:49  locationd[61] <Warning>: notify name "com.apple.locationd.DumpDiagnostics" has been registered 20 times - this may be a leak
+Feb 20 21:46:50  profiled[1925] <Notice>: (Note ) profiled: Service starting...
+Feb 20 21:46:50  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:46:54  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:54  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:57  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:46:57  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:47:00  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:47:00  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:47:01  profiled[1925] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:47:16  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:47:16  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 21:47:18  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 21:47:18  kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 21:47:18  backboardd[31] <Notice>: MultitouchHID: detection mode: 3->255
+Feb 20 21:47:19  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 21:47:19  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 21:47:19  SpringBoard[16] <Warning>: [MPUNowPlayingController] Not registered for now playing notifications. Ignoring call to -unregisterForNotifications.
+Feb 20 21:47:19  SpringBoard[16] <Notice>: (Note ) MC: Locking device.
+Feb 20 21:47:19  SpringBoard[16] <Error>: __MKBAssertionFinalize: __MKBAssertionFinalize(0x170a23860)
+Feb 20 21:47:19  SpringBoard[16] <Error>: MKBDeviceLockAssertion: MKBDeviceLockAssertion  (asserttype:4999832 with error 1)
+Feb 20 21:47:19  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:47:19  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:47:19  profiled[1928] <Notice>: (Note ) profiled: Service starting...
+Feb 20 21:47:19  accountsd[87] <Notice>: 2014-02-20 21:47:19.409 accountsd[87:12939]: Cannot check access to a private account type: (null)
+Feb 20 21:47:19  touchsetupd[115] <Warning>: WPTransfer deallocing
+Feb 20 21:47:19  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:47:19  kernel[0] <Debug>: AppleKeyStore: operation failed (pid: 16 sel: 26 ret: e00002e2)
+Feb 20 21:47:19  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 21:47:19  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 21:47:20  backupd[1929] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 21:47:29  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:47:29  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 21:47:30  searchd[1915] <Warning>: Indexed all records in 0.18s
+Feb 20 21:47:40  profiled[1928] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:48:30  searchd[1931] <Warning>: Finished getting 86 applications, took 0.040224 seconds
+Feb 20 21:48:31  searchd[1931] <Warning>: Indexed all records in 0.17s
+Feb 20 21:49:49  cplogd[1914] <Warning>: Exiting.
+Feb 20 21:53:46  timed[810] <Notice>: (Note ) CoreTime: Received timezone "America/Montreal" from "Location"
+Feb 20 21:53:46  timed[810] <Notice>: (Note ) CoreTime: Current mcc: '302' simulated:'0'.
+Feb 20 21:53:46  timed[810] <Notice>: (Note ) CoreTime: Not setting time zone to America/Montreal from LocationAndNetwork
+Feb 20 21:55:32  cplogd[1932] <Warning>: Starting.
+Feb 20 21:55:32  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 21:55:32  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 21:55:32  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 21:55:32  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:55:32  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:55:32  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 21:55:32  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 21:55:32  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 21:55:32  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 21:55:32  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x2b2)
+Feb 20 21:55:35  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:55:35  kernel[0] <Debug>: AppleKeyStore:Sending lock change 0
+Feb 20 21:55:35  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->3
+Feb 20 21:55:35  profiled[1933] <Notice>: (Note ) profiled: Service starting...
+Feb 20 21:55:35  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:55:35  locationd[61] <Warning>: notify name "com.apple.locationd.DumpDiagnostics" has been registered 20 times - this may be a leak
+Feb 20 21:55:46  profiled[1933] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:56:02  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 21:56:02  kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 21:56:02  backboardd[31] <Notice>: MultitouchHID: detection mode: 3->255
+Feb 20 21:56:02  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 21:56:02  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 21:56:02  SpringBoard[16] <Warning>: [MPUNowPlayingController] Not registered for now playing notifications. Ignoring call to -unregisterForNotifications.
+Feb 20 21:56:02  SpringBoard[16] <Notice>: (Note ) MC: Locking device.
+Feb 20 21:56:02  SpringBoard[16] <Error>: __MKBAssertionFinalize: __MKBAssertionFinalize(0x17082cda0)
+Feb 20 21:56:02  SpringBoard[16] <Error>: MKBDeviceLockAssertion: MKBDeviceLockAssertion  (asserttype:4999832 with error 1)
+Feb 20 21:56:02  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:56:02  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:56:02  profiled[1935] <Notice>: (Note ) profiled: Service starting...
+Feb 20 21:56:02  touchsetupd[115] <Warning>: WPTransfer deallocing
+Feb 20 21:56:02  accountsd[87] <Notice>: 2014-02-20 21:56:02.923 accountsd[87:17391]: Cannot check access to a private account type: (null)
+Feb 20 21:56:02  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 21:56:03  kernel[0] <Debug>: AppleKeyStore: operation failed (pid: 16 sel: 26 ret: e00002e2)
+Feb 20 21:56:03  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 21:56:03  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 21:56:03  backupd[1936] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 21:56:12  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 21:56:12  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 21:56:23  profiled[1935] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 21:58:32  cplogd[1932] <Warning>: Exiting.
+Feb 20 22:00:31  aggregated[763] <Warning>: notify name "com.apple.powerlog.BasebandHasCDRXCapability" has been registered 360 times - this may be a leak
+Feb 20 22:01:02  cplogd[1938] <Warning>: Starting.
+Feb 20 22:01:02  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 22:01:02  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 22:01:02  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 22:01:02  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:01:02  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:01:02  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 22:01:02  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 22:01:02  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 22:01:02  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 22:01:02  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x2b3)
+Feb 20 22:01:05  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:01:05  kernel[0] <Debug>: AppleKeyStore:Sending lock change 0
+Feb 20 22:01:05  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->3
+Feb 20 22:01:05  locationd[61] <Warning>: notify name "com.apple.locationd.DumpDiagnostics" has been registered 20 times - this may be a leak
+Feb 20 22:01:05  profiled[1939] <Notice>: (Note ) profiled: Service starting...
+Feb 20 22:01:05  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:01:06  SpringBoard[16] <Notice>: 2014-02-20 22:01:06.050|SpringBoard|16|0x178a6fb40|(null): Sync running. Waiting for it to finish before checking for updates.
+Feb 20 22:01:09  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 22:01:09  kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 22:01:09  backboardd[31] <Notice>: MultitouchHID: detection mode: 3->255
+Feb 20 22:01:10  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 22:01:10  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 22:01:10  SpringBoard[16] <Warning>: [MPUNowPlayingController] Not registered for now playing notifications. Ignoring call to -unregisterForNotifications.
+Feb 20 22:01:10  SpringBoard[16] <Notice>: (Note ) MC: Locking device.
+Feb 20 22:01:10  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:01:10  SpringBoard[16] <Error>: __MKBAssertionFinalize: __MKBAssertionFinalize(0x178838780)
+Feb 20 22:01:10  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:01:10  SpringBoard[16] <Error>: MKBDeviceLockAssertion: MKBDeviceLockAssertion  (asserttype:4999832 with error 1)
+Feb 20 22:01:10  touchsetupd[115] <Warning>: WPTransfer deallocing
+Feb 20 22:01:10  kbd[116] <Warning>: -[PFUbiquitySwitchboardEntryMetadata setUseLocalStorage:](754): CoreData: Ubiquity:  mobile~ABF0FDAB-6440-54F5-9ACD-B33D8E88DDF1:UserDictionary
+	Using local storage: 1
+Feb 20 22:01:10  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:01:10  kbd[116] <Warning>: -[PFUbiquitySwitchboardEntryMetadata setUseLocalStorage:](754): CoreData: Ubiquity:  mobile~ABF0FDAB-6440-54F5-9ACD-B33D8E88DDF1:UserDictionary
+	Using local storage: 0
+Feb 20 22:01:10  backupd[1936] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 22:01:10  kernel[0] <Debug>: AppleKeyStore: operation failed (pid: 16 sel: 26 ret: e00002e2)
+Feb 20 22:01:10  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 22:01:10  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 22:01:20  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:01:20  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 22:01:31  profiled[1939] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 22:01:59  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 22:01:59  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 22:01:59  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 22:01:59  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:01:59  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:01:59  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 22:01:59  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 22:01:59  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 22:01:59  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 22:01:59  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x2b3)
+Feb 20 22:01:59  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:01:59  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->3
+Feb 20 22:02:00  kernel[0] <Debug>: AppleKeyStore:Sending lock change 0
+Feb 20 22:02:00  locationd[61] <Warning>: notify name "com.apple.locationd.DumpDiagnostics" has been registered 20 times - this may be a leak
+Feb 20 22:02:00  profiled[1940] <Notice>: (Note ) profiled: Service starting...
+Feb 20 22:02:00  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:02:11  profiled[1940] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 22:02:15  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 22:02:15  kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 22:02:16  backboardd[31] <Notice>: MultitouchHID: detection mode: 3->255
+Feb 20 22:02:16  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 22:02:16  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 22:02:16  SpringBoard[16] <Warning>: [MPUNowPlayingController] Not registered for now playing notifications. Ignoring call to -unregisterForNotifications.
+Feb 20 22:02:16  SpringBoard[16] <Notice>: (Note ) MC: Locking device.
+Feb 20 22:02:16  SpringBoard[16] <Error>: __MKBAssertionFinalize: __MKBAssertionFinalize(0x170a28d00)
+Feb 20 22:02:16  SpringBoard[16] <Error>: MKBDeviceLockAssertion: MKBDeviceLockAssertion  (asserttype:4999832 with error 1)
+Feb 20 22:02:16  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:02:16  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:02:16  profiled[1942] <Notice>: (Note ) profiled: Service starting...
+Feb 20 22:02:16  touchsetupd[115] <Warning>: WPTransfer deallocing
+Feb 20 22:02:16  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:02:16  accountsd[87] <Notice>: 2014-02-20 22:02:16.777 accountsd[87:20455]: Cannot check access to a private account type: (null)
+Feb 20 22:02:16  kernel[0] <Debug>: AppleKeyStore: operation failed (pid: 16 sel: 26 ret: e00002e2)
+Feb 20 22:02:16  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 22:02:16  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 22:02:17  backupd[1943] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 22:02:26  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:02:26  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 22:02:37  profiled[1942] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 22:04:46  cplogd[1938] <Warning>: Exiting.
+Feb 20 22:07:14  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 22:07:14  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 22:07:14  kernel[0] <Debug>: virtual void AppleMobileADBE0::swap_begin(), !fControllerPowerState
+Feb 20 22:07:32  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 22:07:32  kernel[0] <Debug>: virtual void AppleMobileADBE0::swap_begin(), !fControllerPowerState
+Feb 20 22:07:32  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 22:07:32  backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 22:07:32  cplogd[1945] <Warning>: Starting.
+Feb 20 22:07:32  backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 22:07:32  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 22:07:32  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 22:07:32  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 22:07:32  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x627)
+Feb 20 22:07:37  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:07:40  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:07:40  kernel[0] <Debug>: AppleKeyStore:Sending lock change 0
+Feb 20 22:07:40  backboardd[31] <Notice>: MultitouchHID: detection mode: 6->3
+Feb 20 22:07:40  locationd[61] <Warning>: notify name "com.apple.locationd.DumpDiagnostics" has been registered 20 times - this may be a leak
+Feb 20 22:07:40  profiled[1946] <Notice>: (Note ) profiled: Service starting...
+Feb 20 22:07:40  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:07:41  kbd[116] <Warning>: -[PFUbiquitySwitchboardEntryMetadata setUseLocalStorage:](754): CoreData: Ubiquity:  mobile~ABF0FDAB-6440-54F5-9ACD-B33D8E88DDF1:UserDictionary
+	Using local storage: 1
+Feb 20 22:07:42  kbd[116] <Warning>: -[PFUbiquitySwitchboardEntryMetadata setUseLocalStorage:](754): CoreData: Ubiquity:  mobile~ABF0FDAB-6440-54F5-9ACD-B33D8E88DDF1:UserDictionary
+	Using local storage: 0
+Feb 20 22:07:46  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 22:07:46  MobileSMS[1526] <Warning>: [Warning] Attempt to modify chat property: CKPlaceholderTimeSince1970Property   which is not in the whitelist
+Feb 20 22:07:46  searchd[1948] <Warning>: Finished getting 86 applications, took 0.045126 seconds
+Feb 20 22:07:46  searchd[1948] <Warning>: Indexed all records in 0.24s
+Feb 20 22:07:47  backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=0.0000
+Feb 20 22:07:47  kernel[0] <Debug>: AppleMultitouchN1SPI: updating power statistics
+Feb 20 22:07:47  backboardd[31] <Notice>: MultitouchHID: detection mode: 3->255
+Feb 20 22:07:48  kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 0 (set level to 0x1d7)
+Feb 20 22:07:48  backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=0
+Feb 20 22:07:48  SpringBoard[16] <Warning>: [MPUNowPlayingController] Not registered for now playing notifications. Ignoring call to -unregisterForNotifications.
+Feb 20 22:07:48  SpringBoard[16] <Notice>: (Note ) MC: Locking device.
+Feb 20 22:07:48  SpringBoard[16] <Error>: __MKBAssertionFinalize: __MKBAssertionFinalize(0x170a23640)
+Feb 20 22:07:48  SpringBoard[16] <Error>: MKBDeviceLockAssertion: MKBDeviceLockAssertion  (asserttype:4999832 with error 1)
+Feb 20 22:07:48  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:07:48  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:07:48  touchsetupd[115] <Warning>: WPTransfer deallocing
+Feb 20 22:07:48  wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:07:48  backupd[1943] <Warning>: INFO: Scheduling next backup at 2/21/14, 7:58:35 PM
+Feb 20 22:07:48  kernel[0] <Debug>: AppleKeyStore: operation failed (pid: 16 sel: 26 ret: e00002e2)
+Feb 20 22:07:48  kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 0 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 1 -> 0 fDisplay: 1 -> 0
+Feb 20 22:07:48  kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 0
+Feb 20 22:07:58  UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:07:58  kernel[0] <Debug>: AppleKeyStore:Sending lock change 1
+Feb 20 22:08:09  profiled[1946] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 22:08:32  lockdownd[25] <Notice>: 00484000 set_response_error: handle_get_value GetProhibited
+Feb 20 22:08:32  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQReleaseType) returned NULL
+Feb 20 22:08:32  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQSDIOProductInfo) returned NULL
+Feb 20 22:08:32  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQSDIOManufacturerTuple) returned NULL
+Feb 20 22:08:32  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQBasebandBoardSnum) returned NULL
+Feb 20 22:08:32  lockdownd[25] <Notice>: 01bcc000 special_case_get: MGCopyAnswer(kMGQWirelessBoardSnum) returned NULL
+Feb 20 22:08:34  DTFetchSymbols[1955] <Notice>: Found paths:
+Feb 20 22:08:34  DTFetchSymbols[1955] <Notice>: /usr/lib/dyld
+Feb 20 22:08:34  DTFetchSymbols[1955] <Notice>: /System/Library/Caches/com.apple.dyld/dyld_shared_cache_arm64
+Feb 20 22:08:34  DTFetchSymbols[1955] <Notice>: /System/Library/Caches/com.apple.dyld/dyld_shared_cache_armv7s
+Feb 20 22:08:40 Kenzora-iFone backboardd[31] <Notice>: ALS: SetDisplayFactor: factor=1.0000
+Feb 20 22:08:40 Kenzora-iFone backboardd[31] <Notice>: Posting 'com.apple.iokit.hid.displayStatus' notifyState=1
+Feb 20 22:08:40 Kenzora-iFone kernel[0] <Debug>: AppleMobileADBE0::do_power_state_change(): fSoft: 1 fHard: 1 swapBusy: 0 pendingSwap: 0x0 fController: 0 -> 1 fDisplay: 0 -> 1
+Feb 20 22:08:40 Kenzora-iFone wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:08:40 Kenzora-iFone wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:08:40 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Feb 20 22:08:40 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: device bootloaded
+Feb 20 22:08:40 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 6->6
+Feb 20 22:08:40 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::handleMessageGated - framebufferState -> 1
+Feb 20 22:08:40 Kenzora-iFone kernel[0] <Debug>: ALS: AppleARMBacklight::setBacklightEnableGated 1 (set level to 0x2b3)
+Feb 20 22:08:41 Kenzora-iFone UserEventAgent[15] <Error>:  LockStateNotifier aksNotificationCallback posting notification: com.apple.mobile.keybagd.lock_status
+Feb 20 22:08:41 Kenzora-iFone backboardd[31] <Notice>: MultitouchHID: detection mode: 6->3
+Feb 20 22:08:41 Kenzora-iFone locationd[61] <Warning>: notify name "com.apple.locationd.DumpDiagnostics" has been registered 20 times - this may be a leak
+Feb 20 22:08:41 Kenzora-iFone kernel[0] <Debug>: AppleKeyStore:Sending lock change 0
+Feb 20 22:08:41 Kenzora-iFone profiled[1958] <Notice>: (Note ) profiled: Service starting...
+Feb 20 22:08:41 Kenzora-iFone wirelessproxd[782] <Warning>: CoreBluetooth[WARNING] <CBCentralManager: 0x15e50c6c0> is disabling duplicate filtering, but is using the default queue (main thread) for delegate events
+Feb 20 22:08:44 Kenzora-iFone kernel[0] <Debug>: launchd[1959] Container: /private/var/mobile/Applications/10F4FD5E-E822-48E7-9446-CD604EE47340 (sandbox)
+Feb 20 22:08:44 Kenzora-iFone networkd[83] <Warning>: Analytics Engine: double ON for app: com.kenzoragames.KittenShake
+Feb 20 22:08:46 Kenzora-iFone searchd[1960] <Warning>: Finished getting 86 applications, took 0.151192 seconds
+Feb 20 22:08:47 Kenzora-iFone searchd[1960] <Warning>: Indexed all records in 0.24s
+Feb 20 22:08:47 Kenzora-iFone kernel[0] <Debug>: AppleH6CamIn::setPowerStateGated: 1
+Feb 20 22:08:47 Kenzora-iFone kernel[0] <Debug>: AppleH6CamIn::power_on_hardware
+Feb 20 22:08:48 Kenzora-iFone kernel[0] <Debug>: AppleH6CamIn::ISP_SelectBestMIPIFrequencyIndex_gated - channel: 0, index: 2
+Feb 20 22:08:50 Kenzora-iFone kernel[0] <Debug>: AppleH6CamIn::setPowerStateGated: 0
+Feb 20 22:08:50 Kenzora-iFone kernel[0] <Debug>: AppleH6CamIn::power_off_hardware
+Feb 20 22:08:51 Kenzora-iFone KittenShake[1959] <Warning>: loading sfx_meow_07
+Feb 20 22:08:51 Kenzora-iFone KittenShake[1959] <Warning>: openned kitten_06 with <UIImage: 0x15e8e480>
+Feb 20 22:08:51 Kenzora-iFone KittenShake[1959] <Warning>: [RevMob] Starting RevMobAds
+Feb 20 22:08:52 Kenzora-iFone profiled[1958] <Notice>: (Note ) profiled: Service stopping.
+Feb 20 22:08:57 Kenzora-iFone KittenShake[1959] <Error>: *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'Receiver (<KBShakeViewController: 0x15e875f0>) has no segue with identifier 'needPhoto''
+	*** First throw call stack:
+	(0x2d460e83 0x377c16c7 0x2fea66d9 0x2fc19da3 0x2fd81615 0x2fc19da3 0x2fc19d3f 0x2fc19d13 0x2fc05743 0x2fc1975b 0x2fbdd1a1 0x2d42bf69 0x2d4298f7 0x2d429c43 0x2d394471 0x2d394253 0x320c82eb 0x2fc49845 0xcd1e7 0x37cbaab7)
+Feb 20 22:08:57 Kenzora-iFone ReportCrash[1961] <Notice>: ReportCrash acting against PID 1959
+Feb 20 22:08:58 Kenzora-iFone ReportCrash[1961] <Notice>: Formulating crash report for process KittenShake[1959]
+Feb 20 22:08:58 Kenzora-iFone com.apple.launchd[1] (UIKitApplication:com.kenzoragames.KittenShake[0x87b5][1959]) <Warning>: (UIKitApplication:com.kenzoragames.KittenShake[0x87b5]) Job appears to have crashed: Abort trap: 6
+Feb 20 22:08:58 Kenzora-iFone backboardd[31] <Warning>: Application 'UIKitApplication:com.kenzoragames.KittenShake[0x87b5]' exited abnormally with signal 6: Abort trap: 6
+Feb 20 22:08:58 Kenzora-iFone ReportCrash[1961] <Notice>: Saved crashreport to /var/mobile/Library/Logs/CrashReporter/KittenShake_2014-02-20-220857_Kenzora-iFone.plist using uid: 0 gid: 0, synthetic_euid: 501 egid: 0
