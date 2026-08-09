@@ -81,14 +81,10 @@ struct GetStartedView: View {
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(KSTheme.accent)
                     }
-                    // Pushed `navigationDestination` content doesn't reliably
-                    // inherit the floating `KSTabBar`'s `safeAreaInset` from
-                    // `RootView` (unlike the NavigationStack's root, e.g.
-                    // Home), so without explicit clearance here this link
-                    // ends up laid out behind the tab bar. Reserve enough
-                    // room for the tab bar's rendered height plus its own
-                    // margins so "Not now" is always fully visible above it.
-                    .padding(.bottom, KSTheme.flowBottomClearance)
+                    // The mockup shows no tab bar on this screen, and it's
+                    // hidden via `TabBarVisibility` above, so only normal
+                    // safe-area breathing room is needed here.
+                    .padding(.bottom, KSTheme.spacingL)
                 }
                 .padding(.top, KSTheme.spacingM)
             }
@@ -96,7 +92,13 @@ struct GetStartedView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear(perform: refreshStatuses)
+        .onAppear {
+            refreshStatuses()
+            TabBarVisibility.shared.isHidden = true
+        }
+        .onDisappear {
+            TabBarVisibility.shared.isHidden = false
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { refreshStatuses() }
         }

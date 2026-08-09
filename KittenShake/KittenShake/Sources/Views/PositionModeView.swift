@@ -24,11 +24,20 @@ struct PositionModeView: View {
 
                 bottomPanel
                     .padding(.horizontal, KSTheme.spacingM)
-                    .padding(.bottom, KSTheme.flowBottomClearance)
+                    // The mockup shows no tab bar on this screen, and it's
+                    // hidden via `TabBarVisibility` below, so only normal
+                    // safe-area breathing room is needed here.
+                    .padding(.bottom, KSTheme.spacingL)
             }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        .onAppear {
+            TabBarVisibility.shared.isHidden = true
+        }
+        .onDisappear {
+            TabBarVisibility.shared.isHidden = false
+        }
     }
 
     private var topBar: some View {

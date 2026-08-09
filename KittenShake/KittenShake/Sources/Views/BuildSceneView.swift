@@ -65,7 +65,10 @@ struct BuildSceneView: View {
                         }
                     }
                     .padding(.horizontal, KSTheme.spacingM)
-                    .padding(.bottom, KSTheme.flowBottomClearance)
+                    // The mockup shows no tab bar on this screen, and it's
+                    // hidden via `TabBarVisibility` below, so only normal
+                    // safe-area breathing room is needed here.
+                    .padding(.bottom, KSTheme.spacingL)
                 }
             }
             .ksReadableWidth()
@@ -77,12 +80,16 @@ struct BuildSceneView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .onAppear {
+            TabBarVisibility.shared.isHidden = true
             if UITestSupport.autoAI {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { addAIKitten() }
             }
             if UITestSupport.autoExport {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { saveScene() }
             }
+        }
+        .onDisappear {
+            TabBarVisibility.shared.isHidden = false
         }
         .confirmationDialog("Add Another Kitten", isPresented: $showAddSheet, titleVisibility: .visible) {
             Button("Shake a Classic Kitten") {
@@ -196,11 +203,17 @@ struct BuildSceneView: View {
                     .padding(14)
 
                 ZStack {
-                    Circle().fill(KSTheme.surface).frame(width: 48, height: 48)
-                    Image(systemName: "heart.fill").foregroundStyle(KSTheme.accent)
+                    Circle().fill(KSTheme.peach).frame(width: 52, height: 52)
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 20))
+                        .foregroundStyle(KSTheme.accent)
                 }
+                .overlay(Circle().stroke(KSTheme.surface, lineWidth: 3))
                 .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
-                .padding(14)
+                // Matches the Home/Result treatment: the badge hangs
+                // partially outside the card's bottom-right corner rather
+                // than sitting fully inside it.
+                .offset(x: 14, y: 14)
                 .frame(width: side, height: side, alignment: .bottomTrailing)
             }
             .position(x: geo.size.width / 2, y: geo.size.height / 2)

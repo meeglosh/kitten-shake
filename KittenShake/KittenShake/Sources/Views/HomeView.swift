@@ -300,7 +300,9 @@ private struct KSIconTile<Content: View>: View {
 
 /// Three short coral dash marks radiating outward at hero-card mid-height,
 /// echoing the mockup's "sparkle burst" accents on either side of the photo.
-private struct HeroRadiatingDashes: View {
+/// Not `private` so `ShakeReviewView` (mockup 6, which shows the same
+/// accents flanking its photo card) can reuse it instead of duplicating it.
+struct HeroRadiatingDashes: View {
     var pointingRight: Bool
 
     var body: some View {

@@ -89,10 +89,17 @@ struct ShakeReviewView: View {
                 }
 
                 ZStack {
-                    Circle().fill(KSTheme.surface).frame(width: 48, height: 48)
-                    Image(systemName: "heart.fill").foregroundStyle(KSTheme.accent)
+                    Circle().fill(KSTheme.peach).frame(width: 52, height: 52)
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 20))
+                        .foregroundStyle(KSTheme.accent)
                 }
+                .overlay(Circle().stroke(KSTheme.surface, lineWidth: 3))
                 .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
+                // Matches the Home/Result treatment: the badge hangs
+                // partially outside the card's bottom-right corner rather
+                // than sitting fully inside it.
+                .offset(x: 14, y: 14)
                 .padding(14)
             }
             .frame(width: side, height: side)
@@ -102,6 +109,14 @@ struct ShakeReviewView: View {
                     .stroke(.white, lineWidth: 4)
             )
             .shadow(color: .black.opacity(0.14), radius: 16, y: 8)
+            .overlay(alignment: .topLeading) {
+                HeroRadiatingDashes(pointingRight: false)
+                    .offset(x: -10, y: -6)
+            }
+            .overlay(alignment: .topTrailing) {
+                HeroRadiatingDashes(pointingRight: true)
+                    .offset(x: 10, y: -6)
+            }
             .background(ShakeDetectorView(onShake: handleShake))
             .position(x: geo.size.width / 2, y: geo.size.height / 2)
         }

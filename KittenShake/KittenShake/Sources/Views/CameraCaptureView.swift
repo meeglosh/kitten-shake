@@ -32,8 +32,14 @@ struct CameraCaptureView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-        .onAppear { camera.start() }
-        .onDisappear { camera.stop() }
+        .onAppear {
+            camera.start()
+            TabBarVisibility.shared.isHidden = true
+        }
+        .onDisappear {
+            camera.stop()
+            TabBarVisibility.shared.isHidden = false
+        }
         .onReceive(camera.$capturedImage.compactMap { $0 }) { image in
             onCaptured(image)
         }
@@ -119,40 +125,46 @@ struct CameraCaptureView: View {
             .padding(.horizontal, KSTheme.spacingM)
     }
 
+    /// Grid matching mockup 3: Flash (top) and Library (below it) stacked in
+    /// a left column, the big shutter centered, and Flip alone on the right
+    /// — rather than Library floating centered under the shutter.
     private var controlTray: some View {
-        VStack(spacing: KSTheme.spacingM) {
-            HStack {
+        HStack(alignment: .top, spacing: 0) {
+            VStack(spacing: KSTheme.spacingM) {
                 controlButton(icon: camera.flashMode.systemImage, label: "Flash") {
                     camera.cycleFlash()
                 }
                 .opacity(camera.isAvailable ? 1 : 0.35)
                 .disabled(!camera.isAvailable)
 
-                Spacer()
-
-                shutterButton
-
-                Spacer()
-
-                controlButton(icon: "arrow.triangle.2.circlepath.camera", label: "Flip") {
-                    camera.flip()
+                controlButton(icon: "photo.on.rectangle", label: "Library") {
+                    showPhotoPicker = true
                 }
-                .opacity(camera.isAvailable ? 1 : 0.35)
-                .disabled(!camera.isAvailable)
             }
 
-            controlButton(icon: "photo.on.rectangle", label: "Library") {
-                showPhotoPicker = true
+            Spacer()
+
+            shutterButton
+                // Vertically balances the shutter against the two-row left
+                // column so its ring sits roughly centered between Flash and
+                // Library, matching the mockup rather than top-aligning with
+                // Flash alone.
+                .padding(.top, 31)
+
+            Spacer()
+
+            controlButton(icon: "arrow.triangle.2.circlepath.camera", label: "Flip") {
+                camera.flip()
             }
+            .opacity(camera.isAvailable ? 1 : 0.35)
+            .disabled(!camera.isAvailable)
         }
         .padding(.horizontal, KSTheme.spacingXL)
         .padding(.top, KSTheme.spacingL)
-        // The tray's background deliberately bleeds to the true screen edge
-        // (`.ignoresSafeArea(edges: .bottom)`) for a full-bleed look, but the
-        // floating `KSTabBar` (see `RootView`) still renders on top of that
-        // region, so the *content* needs its own reserved clearance or the
-        // last control row's captions end up covered by the bar.
-        .padding(.bottom, KSTheme.flowBottomClearance)
+        // The mockup shows no tab bar on this screen, and it's hidden via
+        // `TabBarVisibility` above, so the tray only needs normal safe-area
+        // breathing room rather than the floating tab bar's clearance.
+        .padding(.bottom, KSTheme.spacingL)
         .frame(maxWidth: .infinity)
         .background(
             KSTheme.surface
@@ -168,7 +180,7 @@ struct CameraCaptureView: View {
         } label: {
             ZStack {
                 Circle().fill(.white).frame(width: 74, height: 74)
-                Circle().stroke(KSTheme.accent, lineWidth: 5).frame(width: 82, height: 82)
+                Circle().stroke(KSTheme.accentDeep, lineWidth: 9).frame(width: 84, height: 84)
             }
         }
         .disabled(!camera.isAvailable)
