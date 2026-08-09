@@ -29,6 +29,7 @@ enum KSTheme {
     static let cardRadius: CGFloat = 28
     static let controlRadius: CGFloat = 28
     static let pillRadius: CGFloat = 100
+    static let spacingXS: CGFloat = 4
     static let spacingS: CGFloat = 8
     static let spacingM: CGFloat = 16
     static let spacingL: CGFloat = 24

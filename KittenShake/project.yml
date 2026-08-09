@@ -48,7 +48,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kenzoragames.KittenShake
         MARKETING_VERSION: "2.0"
-        CURRENT_PROJECT_VERSION: "4"
+        CURRENT_PROJECT_VERSION: "5"
         TARGETED_DEVICE_FAMILY: "1,2"
         SUPPORTS_MACCATALYST: NO
         DEVELOPMENT_TEAM: 7K9WY5T49S

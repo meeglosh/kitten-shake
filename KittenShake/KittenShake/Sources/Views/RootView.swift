@@ -2,6 +2,7 @@ import SwiftUI
 
 /// The app's top-level bottom tab bar: Home / Creations / Settings.
 struct RootView: View {
+    @ObservedObject private var tabBarVisibility = TabBarVisibility.shared
     @State private var selection: Int = {
         switch UITestSupport.screen {
         case "creations": return 1
@@ -41,8 +42,10 @@ struct RootView: View {
         .tint(KSTheme.accent)
         .fontDesign(.rounded)
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            KSTabBar(selection: $selection, items: tabItems)
-                .padding(.bottom, 4)
+            if !tabBarVisibility.isHidden {
+                KSTabBar(selection: $selection, items: tabItems)
+                    .padding(.bottom, 4)
+            }
         }
         .onAppear {
             if UITestSupport.screen == "creations", CreationStore.shared.creations.isEmpty,

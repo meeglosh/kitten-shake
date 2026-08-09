@@ -1,5 +1,19 @@
 import SwiftUI
 
+/// Lets a pushed screen (currently just `ResultView`, a full-height
+/// celebration screen with no mockup tab bar) ask `RootView` to collapse its
+/// floating `KSTabBar` safe-area inset. `RootView` sits *above*
+/// `HomeContainerView`'s navigation stack in the view tree, so a plain
+/// `@EnvironmentObject` set from a pushed child wouldn't flow upward; a
+/// shared singleton (same pattern as `CreationStore.shared`) is the simplest
+/// way to bridge that without threading state through every intermediate
+/// view.
+final class TabBarVisibility: ObservableObject {
+    static let shared = TabBarVisibility()
+    @Published var isHidden = false
+    private init() {}
+}
+
 struct KSTabBarItem {
     let title: String
     let systemImage: String
