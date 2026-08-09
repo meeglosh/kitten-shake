@@ -11,7 +11,15 @@ enum KSTheme {
     static let surface = Color("AppSurface")
     static let surfaceRaised = Color("AppSurfaceRaised")
     static let accent = Color("AccentCoral")
+    /// A deeper, more saturated coral-red than `accent`, sampled from the
+    /// mockup's "Add kittens." tagline line — used for display-scale
+    /// headline emphasis where the plain button coral reads too light.
+    static let accentDeep = Color("AccentCoralDeep")
     static let gold = Color("AccentGold")
+    /// Warm pale peach used for soft badge/tile fills (heart badge circle,
+    /// "Choose from Library" icon tile) where pure white reads too stark
+    /// against the cream background, per the mockups.
+    static let peach = Color("AccentPeach")
     static let textPrimary = Color("TextPrimary")
     static let textSecondary = Color("TextSecondary")
     static let cardBorder = Color("CardBorder")
@@ -38,7 +46,7 @@ enum KSTheme {
     /// above it. Measured empirically against the rendered `KSTabBar` on an
     /// iPhone 17 simulator (~134pt from screen bottom to clear cream
     /// background above the bar); kept with a small margin of safety.
-    static let flowBottomClearance: CGFloat = 140
+    static let flowBottomClearance: CGFloat = 115
 
     // MARK: Type
 

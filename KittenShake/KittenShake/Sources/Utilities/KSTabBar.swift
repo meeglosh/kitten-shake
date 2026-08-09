@@ -21,7 +21,7 @@ struct KSTabBar: View {
             }
         }
         .padding(.horizontal, 10)
-        .padding(.vertical, 10)
+        .padding(.vertical, 6)
         .background(
             Capsule(style: .continuous)
                 .fill(KSTheme.surface)
@@ -33,7 +33,7 @@ struct KSTabBar: View {
         // the bar.
         .shadow(color: .black.opacity(0.10), radius: 10, x: 0, y: 3)
         .padding(.horizontal, KSTheme.spacingM)
-        .padding(.bottom, 10)
+        .padding(.bottom, 4)
     }
 
     private func tabButton(index: Int) -> some View {
@@ -45,18 +45,18 @@ struct KSTabBar: View {
             }
             selection = index
         } label: {
-            VStack(spacing: 5) {
+            VStack(spacing: 3) {
                 Image(systemName: item.systemImage)
-                    .font(.system(size: 20, weight: isSelected ? .semibold : .regular))
+                    .font(.system(size: 18, weight: isSelected ? .semibold : .regular))
                 Text(item.title)
-                    .font(.system(size: 12, weight: isSelected ? .semibold : .regular, design: .rounded))
+                    .font(.system(size: 11, weight: isSelected ? .semibold : .regular, design: .rounded))
                 Capsule()
                     .fill(isSelected ? KSTheme.accent : Color.clear)
-                    .frame(width: 20, height: 3)
+                    .frame(width: 18, height: 3)
             }
             .foregroundStyle(isSelected ? KSTheme.accent : KSTheme.textSecondary.opacity(0.7))
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 6)
+            .padding(.vertical, 4)
             .background(
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .fill(isSelected ? KSTheme.accent.opacity(0.12) : Color.clear)

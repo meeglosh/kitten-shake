@@ -124,28 +124,41 @@ struct HomeView: View {
                     VStack(spacing: 10) {
                         header
                             .scaleEffect(0.9)
-                            .frame(height: 56)
+                            .frame(height: 52)
 
                         heroCard
-                            .frame(maxHeight: proxy.size.height * 0.34)
+                            .frame(height: proxy.size.height * 0.33)
 
-                        VStack(spacing: 2) {
+                        VStack(spacing: -2) {
                             Text("Shake photos.")
                                 .foregroundStyle(KSTheme.textPrimary)
                             Text("Add kittens.")
-                                .foregroundStyle(KSTheme.accent)
-                            Text("Smile. ✨")
-                                .foregroundStyle(KSTheme.textPrimary)
+                                .foregroundStyle(KSTheme.accentDeep)
+                            HStack(spacing: 6) {
+                                Text("Smile.")
+                                    .foregroundStyle(KSTheme.textPrimary)
+                                Image(systemName: "sparkle")
+                                    .font(.system(size: 18, weight: .bold))
+                                    .foregroundStyle(KSTheme.gold)
+                            }
                         }
-                        .font(KSTheme.display(22))
+                        .font(KSTheme.display(30, weight: .black))
                         .multilineTextAlignment(.center)
+                        .padding(.top, 2)
 
                         VStack(spacing: 10) {
                             Button {
                                 SoundPlayer.shared.playClick()
                                 startPhotoFlow(preferCamera: true)
                             } label: {
-                                Label("Take Photo", systemImage: "camera.fill")
+                                HStack(spacing: 10) {
+                                    KSIconTile(fill: .white) {
+                                        Image(systemName: "camera.fill")
+                                            .font(.system(size: 14, weight: .semibold))
+                                            .foregroundStyle(KSTheme.accent)
+                                    }
+                                    Text("Take Photo")
+                                }
                             }
                             .buttonStyle(.ksPrimary)
 
@@ -153,11 +166,19 @@ struct HomeView: View {
                                 SoundPlayer.shared.playClick()
                                 startPhotoFlow(preferCamera: false)
                             } label: {
-                                Label("Choose from Library", systemImage: "photo.on.rectangle")
+                                HStack(spacing: 10) {
+                                    KSIconTile(fill: KSTheme.peach) {
+                                        Image(systemName: "photo")
+                                            .font(.system(size: 14, weight: .semibold))
+                                            .foregroundStyle(KSTheme.accent)
+                                    }
+                                    Text("Choose from Library")
+                                }
                             }
                             .buttonStyle(.ksSecondary)
                         }
                         .padding(.horizontal, KSTheme.spacingM)
+                        .padding(.top, 6)
 
                         Button {
                             showOnboarding = true
@@ -227,42 +248,75 @@ struct HomeView: View {
     }
 
     private var heroCard: some View {
-        ZStack(alignment: .bottomTrailing) {
-            RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        colors: [KSTheme.accent.opacity(0.35), KSTheme.gold.opacity(0.35)],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
+        GeometryReader { geo in
+            ZStack(alignment: .bottomTrailing) {
+                Image("HomeHeroSample")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geo.size.width, height: geo.size.height)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous)
+                            .stroke(KSTheme.cardBorder, lineWidth: 4)
                     )
-                )
-                .aspectRatio(1, contentMode: .fit)
-                .overlay {
-                    VStack(spacing: 6) {
-                        Image(systemName: "cat.fill")
-                            .font(.system(size: 44))
-                        Text("Your next kitten photo\nstarts here")
-                            .font(.subheadline.weight(.semibold))
-                            .multilineTextAlignment(.center)
-                    }
-                    .foregroundStyle(.white)
-                    .shadow(color: .black.opacity(0.15), radius: 4, y: 2)
-                }
-                .clipShape(RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous))
-                .overlay(
-                    RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous)
-                        .stroke(KSTheme.cardBorder, lineWidth: 4)
-                )
-                .shadow(color: .black.opacity(0.12), radius: 16, y: 10)
+                    .shadow(color: .black.opacity(0.12), radius: 16, y: 10)
 
-            ZStack {
-                Circle().fill(KSTheme.surface).frame(width: 56, height: 56)
-                Image(systemName: "heart.fill")
-                    .foregroundStyle(KSTheme.accent)
+                ZStack {
+                    Circle().fill(KSTheme.peach).frame(width: 56, height: 56)
+                    Image(systemName: "heart.fill")
+                        .foregroundStyle(KSTheme.accent)
+                }
+                .overlay(Circle().stroke(KSTheme.surface, lineWidth: 3))
+                .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
+                .offset(x: -12, y: 12)
             }
-            .shadow(color: .black.opacity(0.15), radius: 6, y: 3)
-            .offset(x: -12, y: 12)
+            .overlay(alignment: .leading) {
+                HeroRadiatingDashes(pointingRight: false)
+                    .offset(x: -22)
+            }
+            .overlay(alignment: .trailing) {
+                HeroRadiatingDashes(pointingRight: true)
+                    .offset(x: 22)
+            }
         }
+    }
+}
+
+/// Small coral icon tile used behind the Home buttons' glyphs (camera / photo
+/// library), matching the mockup's rounded-square icon chips.
+private struct KSIconTile<Content: View>: View {
+    var fill: Color
+    var size: CGFloat = 30
+    @ViewBuilder var content: Content
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 9, style: .continuous)
+            .fill(fill)
+            .frame(width: size, height: size)
+            .overlay(content)
+    }
+}
+
+/// Three short coral dash marks radiating outward at hero-card mid-height,
+/// echoing the mockup's "sparkle burst" accents on either side of the photo.
+private struct HeroRadiatingDashes: View {
+    var pointingRight: Bool
+
+    var body: some View {
+        VStack(spacing: 6) {
+            dash(length: 14)
+            dash(length: 20)
+            dash(length: 14)
+        }
+        .frame(width: 16, height: 46)
+    }
+
+    private func dash(length: CGFloat) -> some View {
+        Capsule()
+            .fill(KSTheme.accent.opacity(0.6))
+            .frame(width: 3, height: length)
+            .rotationEffect(.degrees(pointingRight ? 24 : -24))
     }
 }
 
