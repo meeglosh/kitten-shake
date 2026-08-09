@@ -29,17 +29,22 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+        UIRequiresFullScreen: true
         NSCameraUsageDescription: "Kitten Shake needs camera access so you can take a photo to shake kittens onto."
         NSPhotoLibraryAddUsageDescription: "Kitten Shake needs permission to save your kitten creations to your photo library."
         NSPhotoLibraryUsageDescription: "Kitten Shake needs access to your photo library so you can pick a photo to shake kittens onto."
         UIAppFonts:
           - FreckleFace-Regular.ttf
+        ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kenzoragames.KittenShake
         MARKETING_VERSION: "2.0"
         CURRENT_PROJECT_VERSION: "1"
-        TARGETED_DEVICE_FAMILY: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
         SUPPORTS_MACCATALYST: NO
         DEVELOPMENT_TEAM: 7K9WY5T49S
         CODE_SIGN_STYLE: Automatic
