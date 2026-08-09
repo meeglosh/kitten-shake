@@ -36,14 +36,19 @@ targets:
         NSCameraUsageDescription: "Kitten Shake needs camera access so you can take a photo to shake kittens onto."
         NSPhotoLibraryAddUsageDescription: "Kitten Shake needs permission to save your kitten creations to your photo library."
         NSPhotoLibraryUsageDescription: "Kitten Shake needs access to your photo library so you can pick a photo to shake kittens onto."
+        LSApplicationQueriesSchemes:
+          - instagram
         UIAppFonts:
           - FreckleFace-Regular.ttf
+          - Fraunces-Black.ttf
+          - Fraunces-Bold.ttf
+          - Fraunces-SemiBold.ttf
         ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kenzoragames.KittenShake
         MARKETING_VERSION: "2.0"
-        CURRENT_PROJECT_VERSION: "2"
+        CURRENT_PROJECT_VERSION: "3"
         TARGETED_DEVICE_FAMILY: "1,2"
         SUPPORTS_MACCATALYST: NO
         DEVELOPMENT_TEAM: 7K9WY5T49S

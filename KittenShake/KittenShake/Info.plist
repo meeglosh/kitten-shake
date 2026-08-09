@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>instagram</string>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Kitten Shake needs camera access so you can take a photo to shake kittens onto.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
@@ -31,6 +35,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FreckleFace-Regular.ttf</string>
+		<string>Fraunces-Black.ttf</string>
+		<string>Fraunces-Bold.ttf</string>
+		<string>Fraunces-SemiBold.ttf</string>
 	</array>
 	<key>UILaunchScreen</key>
 	<dict/>

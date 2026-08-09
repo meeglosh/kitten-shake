@@ -12,7 +12,7 @@ struct PaywallView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                KSTheme.background.ignoresSafeArea()
+                KSScreenBackground()
 
                 ScrollView {
                     VStack(spacing: KSTheme.spacingL) {
@@ -68,6 +68,7 @@ struct PaywallView: View {
                 }
             }
         }
+        .fontDesign(.rounded)
         .task { await entitlements.loadProduct() }
     }
 

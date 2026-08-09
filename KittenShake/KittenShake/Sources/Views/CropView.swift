@@ -5,6 +5,7 @@ import SwiftUI
 struct CropView: View {
     let sourceImage: UIImage
     @Binding var path: [HomeRoute]
+    @EnvironmentObject private var scene: EditorScene
 
     @State private var scale: CGFloat = 1.0
     @GestureState private var pinchDelta: CGFloat = 1.0
@@ -15,7 +16,7 @@ struct CropView: View {
 
     var body: some View {
         ZStack {
-            KSTheme.background.ignoresSafeArea()
+            KSScreenBackground()
 
             VStack(spacing: KSTheme.spacingL) {
                 VStack(spacing: 6) {
@@ -40,7 +41,7 @@ struct CropView: View {
                 }
                 .buttonStyle(.ksPrimary)
                 .padding(.horizontal, KSTheme.spacingXL)
-                .padding(.bottom, KSTheme.spacingL)
+                .padding(.bottom, KSTheme.flowBottomClearance)
             }
             .ksReadableWidth()
         }
@@ -104,6 +105,7 @@ struct CropView: View {
             sourceImage.draw(in: CGRect(x: drawX, y: drawY, width: drawWidth, height: drawHeight))
         }
 
-        path.append(.editor(ImageBox(result)))
+        scene.reset(background: result)
+        path.append(.shakeReview)
     }
 }

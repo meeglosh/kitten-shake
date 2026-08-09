@@ -8,30 +8,39 @@ struct HomeContainerView: View {
     @State private var path: [HomeRoute]
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @State private var showOnboarding = false
+    @StateObject private var scene = EditorScene()
 
     init() {
+        var initialPath: [HomeRoute] = []
+        var seededScene: EditorScene?
+
         switch UITestSupport.screen {
-        case "editor":
+        case "getstarted":
+            initialPath = [.getStarted]
+        case "camera":
+            initialPath = [.camera]
+        case "shakereview":
             if let sample = ResourceLocator.image(named: "kitten_01") {
-                _path = State(initialValue: [.editor(ImageBox(sample))])
-            } else {
-                _path = State(initialValue: [])
+                let s = EditorScene()
+                s.reset(background: sample)
+                seededScene = s
             }
-        case "editorSeed":
-            // Verification-only hook: if a photo has been pushed into the
-            // simulator's Documents directory ahead of launch (see the AI
-            // kitten / Vision-placement verification flow), use it as the
-            // editor background so we can screenshot placement against a
-            // real face. Falls back to the bundled sample kitten photo.
-            let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let seedURL = documents.appendingPathComponent("ksSeedPhoto.jpg")
-            if let data = try? Data(contentsOf: seedURL), let seeded = UIImage(data: data) {
-                _path = State(initialValue: [.editor(ImageBox(seeded))])
-            } else if let sample = ResourceLocator.image(named: "kitten_01") {
-                _path = State(initialValue: [.editor(ImageBox(sample))])
-            } else {
-                _path = State(initialValue: [])
+            initialPath = [.shakeReview]
+        case "position":
+            if let sample = ResourceLocator.image(named: "kitten_01") {
+                let s = EditorScene()
+                s.seedForDebug(background: sample)
+                seededScene = s
             }
+            initialPath = [.position]
+        case "buildscene":
+            if let sample = ResourceLocator.image(named: "kitten_01") {
+                let s = EditorScene()
+                s.seedForDebug(background: sample)
+                s.addSprite(imageName: "kitten_05", normalizedPosition: CGPoint(x: 0.32, y: 0.34), scale: 0.9)
+                seededScene = s
+            }
+            initialPath = [.buildScene]
         case "result":
             // Renders a real flattened + watermarked export (exercising the
             // same ImageExporter path Save/Share use) so the verification
@@ -44,12 +53,15 @@ struct HomeContainerView: View {
                     sprites: [sprite],
                     kittenImage: { _ in overlay }
                 )
-                _path = State(initialValue: [.result(ImageBox(flattened))])
-            } else {
-                _path = State(initialValue: [])
+                initialPath = [.result(ImageBox(flattened))]
             }
         default:
-            _path = State(initialValue: [])
+            break
+        }
+
+        _path = State(initialValue: initialPath)
+        if let seededScene {
+            _scene = StateObject(wrappedValue: seededScene)
         }
     }
 
@@ -58,15 +70,26 @@ struct HomeContainerView: View {
             HomeView(path: $path, showOnboarding: $showOnboarding)
                 .navigationDestination(for: HomeRoute.self) { route in
                     switch route {
+                    case .getStarted:
+                        GetStartedView(path: $path)
+                    case .camera:
+                        CameraCaptureView(path: $path) { image in
+                            path.append(.crop(ImageBox(image)))
+                        }
                     case .crop(let box):
                         CropView(sourceImage: box.image, path: $path)
-                    case .editor(let box):
-                        EditorView(backgroundImage: box.image, path: $path)
+                    case .shakeReview:
+                        ShakeReviewView(path: $path)
+                    case .position:
+                        PositionModeView(path: $path)
+                    case .buildScene:
+                        BuildSceneView(path: $path)
                     case .result(let box):
                         ResultView(finalImage: box.image, path: $path)
                     }
                 }
         }
+        .environmentObject(scene)
         .onAppear {
             if UITestSupport.screen == "onboarding" {
                 showOnboarding = true
@@ -86,79 +109,73 @@ struct HomeContainerView: View {
 struct HomeView: View {
     @Binding var path: [HomeRoute]
     @Binding var showOnboarding: Bool
+    @EnvironmentObject private var scene: EditorScene
 
-    @State private var showCamera = false
+    @AppStorage("ks.hasCompletedGetStarted") private var hasCompletedGetStarted = false
     @State private var showPhotoPicker = false
     @State private var photosPickerItem: PhotosPickerItem?
 
     var body: some View {
         ZStack {
-            KSTheme.background.ignoresSafeArea()
+            KSScreenBackground()
 
-            ScrollView {
-                VStack(spacing: KSTheme.spacingL) {
-                    header
+            GeometryReader { proxy in
+                ScrollView {
+                    VStack(spacing: 10) {
+                        header
+                            .scaleEffect(0.9)
+                            .frame(height: 56)
 
-                    heroCard
+                        heroCard
+                            .frame(maxHeight: proxy.size.height * 0.34)
 
-                    VStack(spacing: 6) {
-                        Text("Shake photos.")
-                            .foregroundStyle(KSTheme.textPrimary)
-                        Text("Add kittens.")
-                            .foregroundStyle(KSTheme.accent)
-                        Text("Smile. ✨")
-                            .foregroundStyle(KSTheme.textPrimary)
-                    }
-                    .font(KSTheme.display(30))
-                    .multilineTextAlignment(.center)
+                        VStack(spacing: 2) {
+                            Text("Shake photos.")
+                                .foregroundStyle(KSTheme.textPrimary)
+                            Text("Add kittens.")
+                                .foregroundStyle(KSTheme.accent)
+                            Text("Smile. ✨")
+                                .foregroundStyle(KSTheme.textPrimary)
+                        }
+                        .font(KSTheme.display(22))
+                        .multilineTextAlignment(.center)
 
-                    VStack(spacing: KSTheme.spacingM) {
-                        Button {
-                            SoundPlayer.shared.playClick()
-                            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                                showCamera = true
-                            } else {
-                                showPhotoPicker = true
+                        VStack(spacing: 10) {
+                            Button {
+                                SoundPlayer.shared.playClick()
+                                startPhotoFlow(preferCamera: true)
+                            } label: {
+                                Label("Take Photo", systemImage: "camera.fill")
                             }
-                        } label: {
-                            Label("Take Photo", systemImage: "camera.fill")
+                            .buttonStyle(.ksPrimary)
+
+                            Button {
+                                SoundPlayer.shared.playClick()
+                                startPhotoFlow(preferCamera: false)
+                            } label: {
+                                Label("Choose from Library", systemImage: "photo.on.rectangle")
+                            }
+                            .buttonStyle(.ksSecondary)
                         }
-                        .buttonStyle(.ksPrimary)
+                        .padding(.horizontal, KSTheme.spacingM)
 
                         Button {
-                            SoundPlayer.shared.playClick()
-                            showPhotoPicker = true
+                            showOnboarding = true
                         } label: {
-                            Label("Choose from Library", systemImage: "photo.on.rectangle")
+                            Label("How it works", systemImage: "chevron.right")
+                                .labelStyle(.trailingIcon)
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(KSTheme.accent)
                         }
-                        .buttonStyle(.ksSecondary)
+                        .padding(.top, 2)
+                        .padding(.bottom, 16)
                     }
-                    .padding(.horizontal, KSTheme.spacingM)
-
-                    Button {
-                        showOnboarding = true
-                    } label: {
-                        Label("How it works", systemImage: "chevron.right")
-                            .labelStyle(.trailingIcon)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(KSTheme.accent)
-                    }
-                    .padding(.top, 4)
-                    .padding(.bottom, KSTheme.spacingXL)
+                    .padding(.horizontal, KSTheme.spacingL)
+                    .padding(.top, KSTheme.spacingS)
+                    .frame(minHeight: proxy.size.height, alignment: .top)
                 }
-                .padding(.horizontal, KSTheme.spacingL)
-                .padding(.top, KSTheme.spacingM)
             }
             .ksReadableWidth()
-        }
-        .fullScreenCover(isPresented: $showCamera) {
-            ImagePickerView(sourceType: .camera) { image in
-                showCamera = false
-                if let image {
-                    path.append(.crop(ImageBox(image)))
-                }
-            }
-            .ignoresSafeArea()
         }
         .photosPicker(isPresented: $showPhotoPicker, selection: $photosPickerItem, matching: .images)
         .onChange(of: photosPickerItem) { _, newItem in
@@ -166,11 +183,31 @@ struct HomeView: View {
             Task {
                 if let data = try? await newItem.loadTransferable(type: Data.self),
                    let uiImage = UIImage(data: data) {
-                    path.append(.crop(ImageBox(uiImage)))
+                    beginScene(with: uiImage)
                 }
                 photosPickerItem = nil
             }
         }
+    }
+
+    /// First run: intercept with Get Started (permissions/explainer) before
+    /// touching the camera or photo picker. After that's been completed
+    /// once, go straight to the requested source, matching the pre-redesign
+    /// behavior.
+    private func startPhotoFlow(preferCamera: Bool) {
+        guard hasCompletedGetStarted else {
+            path.append(.getStarted)
+            return
+        }
+        if preferCamera {
+            path.append(.camera)
+        } else {
+            showPhotoPicker = true
+        }
+    }
+
+    private func beginScene(with image: UIImage) {
+        path.append(.crop(ImageBox(image)))
     }
 
     private var header: some View {
@@ -200,13 +237,12 @@ struct HomeView: View {
                     )
                 )
                 .aspectRatio(1, contentMode: .fit)
-                .frame(maxHeight: 300)
                 .overlay {
-                    VStack(spacing: 10) {
+                    VStack(spacing: 6) {
                         Image(systemName: "cat.fill")
-                            .font(.system(size: 64))
+                            .font(.system(size: 44))
                         Text("Your next kitten photo\nstarts here")
-                            .font(.headline)
+                            .font(.subheadline.weight(.semibold))
                             .multilineTextAlignment(.center)
                     }
                     .foregroundStyle(.white)

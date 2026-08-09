@@ -9,7 +9,7 @@ struct CreationsView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                KSTheme.background.ignoresSafeArea()
+                KSScreenBackground()
 
                 VStack(spacing: 0) {
                     screenHeader
@@ -28,7 +28,7 @@ struct CreationsView: View {
                                 }
                             }
                             .padding(KSTheme.spacingM)
-                            .padding(.bottom, KSTheme.spacingXL)
+                            .padding(.bottom, 110)
                         }
                         .ksReadableWidth()
                     }
@@ -105,7 +105,7 @@ private struct CreationDetailView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                KSTheme.background.ignoresSafeArea()
+                KSScreenBackground()
                 VStack(spacing: KSTheme.spacingL) {
                     if let uiImage = UIImage(contentsOfFile: creation.imageURL.path) {
                         Image(uiImage: uiImage)

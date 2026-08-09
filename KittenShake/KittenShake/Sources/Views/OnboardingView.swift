@@ -39,7 +39,7 @@ struct OnboardingView: View {
 
     var body: some View {
         ZStack {
-            KSTheme.background.ignoresSafeArea()
+            KSScreenBackground()
 
             VStack(spacing: 0) {
                 HStack {
@@ -75,6 +75,7 @@ struct OnboardingView: View {
             }
             .ksReadableWidth()
         }
+        .fontDesign(.rounded)
     }
 
     private func slideView(_ slide: OnboardingSlide) -> some View {

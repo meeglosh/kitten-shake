@@ -14,9 +14,17 @@ final class ImageBox: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
-/// Navigation destinations within the Home tab's photo-editing flow.
+/// Navigation destinations within the Home tab's guided photo-editing flow:
+/// Get Started → Camera/Library → Crop → Shake Review → Position Mode →
+/// Build Scene → Result. Shake Review, Position Mode, and Build Scene read
+/// their working state from the shared `EditorScene` environment object
+/// rather than carrying it as associated values.
 enum HomeRoute: Hashable {
+    case getStarted
+    case camera
     case crop(ImageBox)
-    case editor(ImageBox)
+    case shakeReview
+    case position
+    case buildScene
     case result(ImageBox)
 }

@@ -1,9 +1,9 @@
 import SwiftUI
 
-/// Central design tokens for the Phase 2 visual identity: warm cream/peach
-/// backgrounds, a coral-orange accent, dark navy text, and a serif display
-/// face (New York via `.fontDesign(.serif)`), all with sensible dark-mode
-/// variants defined as Asset Catalog color sets.
+/// Central design tokens for the brand visual identity: warm cream/peach
+/// backgrounds, a coral-orange accent, dark navy text, and Fraunces (a
+/// chunky, warm display serif bundled in Resources/Fonts) for headlines,
+/// all with sensible dark-mode variants defined as Asset Catalog color sets.
 enum KSTheme {
     // MARK: Colors
 
@@ -18,17 +18,40 @@ enum KSTheme {
 
     // MARK: Metrics
 
-    static let cardRadius: CGFloat = 24
-    static let controlRadius: CGFloat = 18
+    static let cardRadius: CGFloat = 28
+    static let controlRadius: CGFloat = 28
+    static let pillRadius: CGFloat = 100
     static let spacingS: CGFloat = 8
     static let spacingM: CGFloat = 16
     static let spacingL: CGFloat = 24
     static let spacingXL: CGFloat = 32
 
+    /// Bottom clearance reserved by screens pushed onto `HomeContainerView`'s
+    /// `NavigationStack` (Get Started, Build Scene, Result, Position Mode,
+    /// Shake Review) so their trailing content isn't laid out behind the
+    /// floating `KSTabBar`. `RootView` reserves the tab bar's height via
+    /// `.safeAreaInset(edge: .bottom)` on its outer `ZStack`, but that inset
+    /// isn't reliably inherited by content pushed via `navigationDestination`
+    /// — those screens get the full, un-reduced screen height to lay out in,
+    /// so without this explicit reserve their bottom-most controls can end
+    /// up rendered underneath the (opaque, but shorter) tab bar rather than
+    /// above it. Measured empirically against the rendered `KSTabBar` on an
+    /// iPhone 17 simulator (~134pt from screen bottom to clear cream
+    /// background above the bar); kept with a small margin of safety.
+    static let flowBottomClearance: CGFloat = 140
+
     // MARK: Type
 
+    /// The brand's chunky warm serif (Fraunces) used for headlines and the
+    /// wordmark, matching the mockups' heavy, rounded display type.
     static func display(_ size: CGFloat, weight: Font.Weight = .bold) -> Font {
-        .system(size: size, weight: weight, design: .serif)
+        .fraunces(size: size, weight: weight)
+    }
+
+    /// Rounded sans used for body/secondary copy, echoing the mockups'
+    /// friendly rounded sans without bundling a second custom font family.
+    static func body(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        .system(size: size, weight: weight, design: .rounded)
     }
 }
 
@@ -44,8 +67,94 @@ struct KSCard<Content: View>: View {
             .background(
                 RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous)
                     .fill(KSTheme.surface)
-                    .shadow(color: .black.opacity(0.10), radius: 14, x: 0, y: 8)
+                    .shadow(color: KSTheme.accent.opacity(0.14), radius: 18, x: 0, y: 10)
             )
+    }
+}
+
+// MARK: - Status pill
+
+/// The rounded status/tip pill seen throughout the mockups ("Shake
+/// detected!", "New kitten added", "Choose a clear photo…"): a small glyph
+/// plus text on a soft pale background.
+struct KSPill: View {
+    var systemImage: String
+    var text: String
+    var tint: Color = KSTheme.accent
+    var background: Color = KSTheme.gold.opacity(0.16)
+    var textFont: Font = .subheadline.weight(.semibold)
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: systemImage)
+                .foregroundStyle(tint)
+            Text(text)
+                .foregroundStyle(tint)
+        }
+        .font(textFont)
+        .padding(.horizontal, 18)
+        .padding(.vertical, 10)
+        .background(
+            Capsule(style: .continuous)
+                .fill(background)
+        )
+        .overlay(
+            Capsule(style: .continuous)
+                .stroke(tint.opacity(0.18), lineWidth: 1)
+        )
+    }
+}
+
+// MARK: - Soft cloud background
+
+/// A very low-contrast rounded "cloud blob" backdrop shape echoing the
+/// mockups' soft cloud silhouettes peeking in from the screen edges.
+private struct CloudBlob: Shape {
+    func path(in rect: CGRect) -> Path {
+        var p = Path()
+        let w = rect.width, h = rect.height
+        p.addEllipse(in: CGRect(x: 0, y: h * 0.35, width: w * 0.6, height: h * 0.55))
+        p.addEllipse(in: CGRect(x: w * 0.3, y: h * 0.1, width: w * 0.55, height: h * 0.6))
+        p.addEllipse(in: CGRect(x: w * 0.55, y: h * 0.4, width: w * 0.45, height: h * 0.5))
+        return p
+    }
+}
+
+/// Two soft cloud shapes tucked into the top corners, used behind screen
+/// content via `.ksBackground(clouds:)`. Kept extremely low-contrast so it
+/// never competes with foreground content, and skipped entirely in dark
+/// mode where the mockups' airy cream backdrop doesn't apply.
+struct KSCloudBackdrop: View {
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        GeometryReader { geo in
+            if colorScheme == .light {
+                CloudBlob()
+                    .fill(Color.white.opacity(0.55))
+                    .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.16)
+                    .position(x: geo.size.width * 0.12, y: geo.size.height * 0.1)
+
+                CloudBlob()
+                    .fill(Color.white.opacity(0.5))
+                    .frame(width: geo.size.width * 0.65, height: geo.size.height * 0.14)
+                    .position(x: geo.size.width * 0.92, y: geo.size.height * 0.22)
+            }
+        }
+        .allowsHitTesting(false)
+    }
+}
+
+/// The standard full-bleed screen backdrop: cream background plus the soft
+/// cloud accents, used as the first layer in every screen's root `ZStack`
+/// in place of a bare `KSTheme.background.ignoresSafeArea()`.
+struct KSScreenBackground: View {
+    var body: some View {
+        ZStack {
+            KSTheme.background
+            KSCloudBackdrop()
+        }
+        .ignoresSafeArea()
     }
 }
 
@@ -133,24 +242,16 @@ extension ButtonStyle where Self == KSSparkleButtonStyle {
 
 // MARK: - Reusable chrome
 
-/// The cat-face wordmark used across Home, Onboarding, and the Result screen.
+/// The cat-face wordmark used across Home, Onboarding, and the Result
+/// screen. Thin wrapper around `BrandHeader` (cat mark + two-line Fraunces
+/// "Kitten Shake" lockup) kept under its historical name so existing call
+/// sites don't need to change.
 struct KittenShakeWordmark: View {
-    var logoSize: CGFloat = 44
+    var logoSize: CGFloat = 64
     var titleSize: CGFloat = 30
 
     var body: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "cat.fill")
-                .font(.system(size: logoSize * 0.62))
-                .foregroundStyle(KSTheme.accent)
-                .frame(width: logoSize, height: logoSize)
-                .background(
-                    Circle().fill(KSTheme.accent.opacity(0.14))
-                )
-            Text("Kitten Shake")
-                .font(KSTheme.display(titleSize))
-                .foregroundStyle(KSTheme.textPrimary)
-        }
+        BrandHeader(markSize: logoSize, lineSize: titleSize)
     }
 }
 
@@ -168,7 +269,13 @@ extension View {
     func ksReadableWidth() -> some View { modifier(ReadableWidth()) }
 
     func ksBackground() -> some View {
-        self.background(KSTheme.background.ignoresSafeArea())
+        self.background(
+            ZStack {
+                KSTheme.background
+                KSCloudBackdrop()
+            }
+            .ignoresSafeArea()
+        )
     }
 }
 

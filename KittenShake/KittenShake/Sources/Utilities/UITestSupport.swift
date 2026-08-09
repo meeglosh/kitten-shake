@@ -18,7 +18,7 @@ enum UITestSupport {
         return args[idx + 1]
     }
 
-    /// Verification-only hook: when present, `EditorView` automatically
+    /// Verification-only hook: when present, `BuildSceneView` automatically
     /// triggers the AI Kitten action shortly after appearing, so the
     /// generation → placement flow can be screenshotted without needing a
     /// real tap-automation harness in the simulator.
@@ -36,10 +36,10 @@ enum UITestSupport {
         ProcessInfo.processInfo.arguments.contains("-ksForceSubscriber")
     }
 
-    /// Verification-only hook: `EditorView` automatically exports and jumps
-    /// to `ResultView` shortly after appearing, so the watermark on/off
-    /// behavior (driven by `Entitlements.isSubscriber`) can be
-    /// screenshotted without a real tap on the Share button.
+    /// Verification-only hook: `BuildSceneView` automatically saves and
+    /// jumps to `ResultView` shortly after appearing, so the watermark
+    /// on/off behavior (driven by `Entitlements.isSubscriber`) can be
+    /// screenshotted without a real tap on the Save button.
     static var autoExport: Bool {
         ProcessInfo.processInfo.arguments.contains("-ksAutoExport")
     }

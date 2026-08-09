@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var showOnboarding = false
+    @State private var showPaywallForVerification = false
 
     private var appVersion: String {
         let short = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "2.0"
@@ -12,7 +13,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                KSTheme.background.ignoresSafeArea()
+                KSScreenBackground()
 
                 ScrollView {
                     VStack(spacing: KSTheme.spacingL) {
@@ -46,7 +47,7 @@ struct SettingsView: View {
                             .font(.footnote)
                             .foregroundStyle(KSTheme.textSecondary)
                             .padding(.top, KSTheme.spacingM)
-                            .padding(.bottom, KSTheme.spacingL)
+                            .padding(.bottom, 110)
                     }
                     .padding(.horizontal, KSTheme.spacingM)
                     .padding(.top, KSTheme.spacingM)
@@ -56,6 +57,17 @@ struct SettingsView: View {
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $showOnboarding) {
                 OnboardingView { showOnboarding = false }
+            }
+            .sheet(isPresented: $showPaywallForVerification) {
+                PaywallView()
+            }
+            .onAppear {
+                // Verification-only hook (see UITestSupport): jumps straight
+                // to the paywall sheet so it can be screenshotted without a
+                // real tap on the subscription row.
+                if UITestSupport.screen == "paywall" {
+                    showPaywallForVerification = true
+                }
             }
         }
     }
