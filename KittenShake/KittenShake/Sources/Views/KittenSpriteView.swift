@@ -9,10 +9,12 @@ struct KittenSpriteView: View {
     let uiImage: UIImage?
     let onSelect: () -> Void
     let onPet: () -> Void
+    var onTransformBegin: () -> Void = {}
 
     @GestureState private var dragDelta: CGSize = .zero
     @GestureState private var pinchDelta: CGFloat = 1.0
     @GestureState private var rotationDelta: Angle = .zero
+    @State private var didBeginTransform = false
 
     var body: some View {
         let baseSize = canvasSide * KittenSprite.defaultSizeFraction
@@ -45,24 +47,27 @@ struct KittenSpriteView: View {
                 SimultaneousGesture(
                     DragGesture(minimumDistance: 2)
                         .updating($dragDelta) { value, state, _ in state = value.translation }
-                        .onChanged { _ in onSelect() }
+                        .onChanged { _ in beginTransformIfNeeded() }
                         .onEnded { value in
                             sprite.normalizedPosition.x += value.translation.width / canvasSide
                             sprite.normalizedPosition.y += value.translation.height / canvasSide
                             clampPosition()
+                            didBeginTransform = false
                         },
                     MagnificationGesture()
                         .updating($pinchDelta) { value, state, _ in state = value }
-                        .onChanged { _ in onSelect() }
+                        .onChanged { _ in beginTransformIfNeeded() }
                         .onEnded { value in
                             sprite.scale = min(max(sprite.scale * value, KittenSprite.minScale), KittenSprite.maxScale)
+                            didBeginTransform = false
                         }
                 ),
                 RotationGesture()
                     .updating($rotationDelta) { value, state, _ in state = value }
-                    .onChanged { _ in onSelect() }
+                    .onChanged { _ in beginTransformIfNeeded() }
                     .onEnded { value in
                         sprite.rotation += value
+                        didBeginTransform = false
                     }
             )
         )
@@ -71,6 +76,14 @@ struct KittenSpriteView: View {
             onPet()
         }
         .animation(.easeOut(duration: 0.15), value: sprite.imageName)
+    }
+
+    private func beginTransformIfNeeded() {
+        if !didBeginTransform {
+            didBeginTransform = true
+            onTransformBegin()
+        }
+        onSelect()
     }
 
     private func clampPosition() {

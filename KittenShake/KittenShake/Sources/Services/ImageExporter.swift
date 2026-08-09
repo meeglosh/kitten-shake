@@ -9,7 +9,8 @@ enum ImageExporter {
         background: UIImage,
         sprites: [KittenSprite],
         kittenImage: (String) -> UIImage?,
-        minimumSide: CGFloat = 2048
+        minimumSide: CGFloat = 2048,
+        includeWatermark: Bool = true
     ) -> UIImage {
         let sourceSide = min(background.size.width, background.size.height)
         let side = max(minimumSide, sourceSide)
@@ -56,7 +57,9 @@ enum ImageExporter {
                 context.cgContext.restoreGState()
             }
 
-            drawWatermark(in: context.cgContext, canvasSide: side)
+            if includeWatermark {
+                drawWatermark(in: context.cgContext, canvasSide: side)
+            }
         }
     }
 

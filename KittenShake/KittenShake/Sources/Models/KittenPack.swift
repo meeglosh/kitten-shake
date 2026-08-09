@@ -29,11 +29,22 @@ enum KittenCatalog {
         isFree: true
     )
 
-    /// All packs currently unlocked for the player. Phase 2 will filter this
-    /// by purchase/entitlement state.
-    static let unlockedPacks: [KittenPack] = [classicPack]
+    /// All packs currently unlocked for the player: the free classic pack,
+    /// plus "My AI Kittens" once the player has generated at least one.
+    static var unlockedPacks: [KittenPack] {
+        let aiPack = GeneratedKittenStore.shared.pack
+        return aiPack.kittenImageNames.isEmpty ? [classicPack] : [classicPack, aiPack]
+    }
+
+    /// The pack a given kitten image belongs to — used so shaking swaps a
+    /// kitten for another one in the *same* pack (AI kittens shake among
+    /// AI kittens; classic kittens shake among classic kittens).
+    static func pack(containing imageName: String) -> KittenPack {
+        GeneratedKittenStore.shared.contains(imageName) ? GeneratedKittenStore.shared.pack : classicPack
+    }
 
     static func randomKittenImageName(excluding current: String? = nil) -> String {
-        classicPack.randomKittenImageName(excluding: current)
+        guard let current else { return classicPack.randomKittenImageName() }
+        return pack(containing: current).randomKittenImageName(excluding: current)
     }
 }

@@ -4,50 +4,47 @@ import SwiftUI
 /// user can pan/pinch to choose the crop before continuing to the editor.
 struct CropView: View {
     let sourceImage: UIImage
+    @Binding var path: [HomeRoute]
 
     @State private var scale: CGFloat = 1.0
     @GestureState private var pinchDelta: CGFloat = 1.0
     @State private var offset: CGSize = .zero
     @GestureState private var dragDelta: CGSize = .zero
-    @State private var navigateToEditor = false
-    @State private var croppedImage: UIImage?
 
-    private var viewportSide: CGFloat { UIScreen.main.bounds.width - 40 }
+    private var viewportSide: CGFloat { min(UIScreen.main.bounds.width - 40, 520) }
 
     var body: some View {
-        VStack(spacing: 24) {
-            VStack(spacing: 6) {
-                Text("Crop Your Photo")
-                    .font(.freckleFace(size: 30))
-                Text("Pinch and drag to position your photo")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
+        ZStack {
+            KSTheme.background.ignoresSafeArea()
+
+            VStack(spacing: KSTheme.spacingL) {
+                VStack(spacing: 6) {
+                    Text("Crop Your Photo")
+                        .font(KSTheme.display(28))
+                        .foregroundStyle(KSTheme.textPrimary)
+                    Text("Pinch and drag to position your photo")
+                        .font(.footnote)
+                        .foregroundStyle(KSTheme.textSecondary)
+                }
+                .padding(.top, 12)
+
+                cropCanvas
+
+                Spacer()
+
+                Button {
+                    SoundPlayer.shared.playClick()
+                    crop()
+                } label: {
+                    Text("Use Photo")
+                }
+                .buttonStyle(.ksPrimary)
+                .padding(.horizontal, KSTheme.spacingXL)
+                .padding(.bottom, KSTheme.spacingL)
             }
-            .padding(.top, 12)
-
-            cropCanvas
-
-            Spacer()
-
-            Button {
-                SoundPlayer.shared.playClick()
-                crop()
-            } label: {
-                Text("Use Photo")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .padding(.horizontal, 32)
-            .padding(.bottom, 24)
+            .ksReadableWidth()
         }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationDestination(isPresented: $navigateToEditor) {
-            if let croppedImage {
-                EditorView(backgroundImage: croppedImage)
-            }
-        }
     }
 
     private var cropCanvas: some View {
@@ -60,8 +57,12 @@ struct CropView: View {
             .offset(x: offset.width + dragDelta.width, y: offset.height + dragDelta.height)
             .frame(width: side, height: side)
             .clipped()
-            .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.white, lineWidth: 3))
-            .shadow(radius: 6)
+            .clipShape(RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: KSTheme.cardRadius, style: .continuous)
+                    .stroke(KSTheme.cardBorder, lineWidth: 4)
+            )
+            .shadow(color: .black.opacity(0.12), radius: 14, y: 8)
             .contentShape(Rectangle())
             .gesture(
                 SimultaneousGesture(
@@ -103,7 +104,6 @@ struct CropView: View {
             sourceImage.draw(in: CGRect(x: drawX, y: drawY, width: drawWidth, height: drawHeight))
         }
 
-        croppedImage = result
-        navigateToEditor = true
+        path.append(.editor(ImageBox(result)))
     }
 }
