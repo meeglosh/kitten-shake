@@ -46,7 +46,10 @@ struct PaywallView: View {
                             subscribeSection
                         }
 
-                        if let error = entitlements.lastError {
+                        // The product-load failure already gets a friendly,
+                        // actionable card in `productLoadErrorCard` above —
+                        // avoid also duplicating it as a bare red line here.
+                        if let error = entitlements.lastError, !entitlements.productLoadState.isFailed {
                             Text(error)
                                 .font(.footnote)
                                 .foregroundStyle(.red)
@@ -109,45 +112,108 @@ struct PaywallView: View {
 
     private var subscribeSection: some View {
         VStack(spacing: KSTheme.spacingS) {
+            if case .failed = entitlements.productLoadState {
+                productLoadErrorCard
+            } else {
+                priceLine
+
+                Button {
+                    SoundPlayer.shared.playClick()
+                    Task {
+                        await entitlements.purchase()
+                        if entitlements.isSubscriber { dismiss() }
+                    }
+                } label: {
+                    if entitlements.purchaseInProgress {
+                        ProgressView().tint(.white)
+                    } else if entitlements.productLoadState.isLoading {
+                        HStack(spacing: 8) {
+                            ProgressView().tint(.white)
+                            Text("Loading…")
+                        }
+                    } else {
+                        Text("Subscribe")
+                    }
+                }
+                .buttonStyle(.ksPrimary(disabled: isSubscribeDisabled))
+                .disabled(isSubscribeDisabled)
+            }
+
+            restoreButton
+        }
+        .padding(.top, KSTheme.spacingS)
+    }
+
+    private var isSubscribeDisabled: Bool {
+        entitlements.purchaseInProgress || entitlements.product == nil
+    }
+
+    @ViewBuilder
+    private var priceLine: some View {
+        if entitlements.productLoadState.isLoading {
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                .fill(KSTheme.textSecondary.opacity(0.15))
+                .frame(width: 120, height: 22)
+                .redacted(reason: .placeholder)
+                .accessibilityLabel("Loading price")
+        } else {
             Text("\(entitlements.priceText) / month")
                 .font(KSTheme.display(22))
                 .foregroundStyle(KSTheme.textPrimary)
-
-            Button {
-                SoundPlayer.shared.playClick()
-                Task {
-                    await entitlements.purchase()
-                    if entitlements.isSubscriber { dismiss() }
-                }
-            } label: {
-                if entitlements.purchaseInProgress {
-                    ProgressView().tint(.white)
-                } else {
-                    Text("Subscribe")
-                }
-            }
-            .buttonStyle(.ksPrimary(disabled: entitlements.purchaseInProgress || entitlements.product == nil))
-            .disabled(entitlements.purchaseInProgress || entitlements.product == nil)
-
-            Button {
-                isRestoring = true
-                Task {
-                    await entitlements.restore()
-                    isRestoring = false
-                    if entitlements.isSubscriber { dismiss() }
-                }
-            } label: {
-                if isRestoring {
-                    ProgressView()
-                } else {
-                    Text("Restore purchases")
-                        .font(.footnote.weight(.semibold))
-                }
-            }
-            .foregroundStyle(KSTheme.accent)
-            .padding(.top, 4)
         }
-        .padding(.top, KSTheme.spacingS)
+    }
+
+    /// Friendly inline card shown in place of the (otherwise dead-looking)
+    /// Subscribe button when `Product.products(for:)` failed to return a
+    /// product — most commonly a TestFlight-side App Store Connect issue
+    /// where the call returns empty rather than throwing.
+    private var productLoadErrorCard: some View {
+        VStack(spacing: KSTheme.spacingS) {
+            HStack(spacing: 10) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundStyle(KSTheme.accent)
+                Text("Can't reach the App Store right now.")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(KSTheme.textPrimary)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            Button {
+                entitlements.retryLoad()
+            } label: {
+                Text("Try Again")
+            }
+            .buttonStyle(.ksPrimary)
+        }
+        .padding(KSTheme.spacingM)
+        .background(
+            RoundedRectangle(cornerRadius: KSTheme.controlRadius, style: .continuous)
+                .fill(KSTheme.surface)
+                .overlay(
+                    RoundedRectangle(cornerRadius: KSTheme.controlRadius, style: .continuous)
+                        .stroke(KSTheme.accent.opacity(0.25), lineWidth: 1)
+                )
+        )
+    }
+
+    private var restoreButton: some View {
+        Button {
+            isRestoring = true
+            Task {
+                await entitlements.restore()
+                isRestoring = false
+                if entitlements.isSubscriber { dismiss() }
+            }
+        } label: {
+            if isRestoring {
+                ProgressView()
+            } else {
+                Text("Restore purchases")
+                    .font(.footnote.weight(.semibold))
+            }
+        }
+        .foregroundStyle(KSTheme.accent)
+        .padding(.top, 4)
     }
 
     private var legalNote: some View {

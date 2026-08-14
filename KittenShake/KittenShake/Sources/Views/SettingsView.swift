@@ -133,6 +133,18 @@ struct SubscriptionSection: View {
     @ObservedObject private var entitlements = Entitlements.shared
     @State private var showPaywall = false
 
+    private var subtitle: String {
+        if entitlements.isSubscriber { return "Subscribed ✓" }
+        switch entitlements.productLoadState {
+        case .loading:
+            return "Loading price…"
+        case .failed:
+            return "— unavailable, tap to retry"
+        case .loaded:
+            return "\(entitlements.priceText)/month — unlimited AI kittens"
+        }
+    }
+
     var body: some View {
         KSCard {
             Button {
@@ -148,7 +160,7 @@ struct SubscriptionSection: View {
                         Text("Infinite Kittens")
                             .font(.headline)
                             .foregroundStyle(KSTheme.textPrimary)
-                        Text(entitlements.isSubscriber ? "Subscribed ✓" : "\(entitlements.priceText)/month — unlimited AI kittens")
+                        Text(subtitle)
                             .font(.footnote)
                             .foregroundStyle(KSTheme.textSecondary)
                     }
@@ -156,6 +168,17 @@ struct SubscriptionSection: View {
                     if entitlements.isSubscriber {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundStyle(KSTheme.accent)
+                    } else if entitlements.productLoadState.isFailed {
+                        Text("Retry")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(KSTheme.accent)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
+                            .background(
+                                Capsule().stroke(KSTheme.accent.opacity(0.4), lineWidth: 1)
+                            )
+                    } else if entitlements.productLoadState.isLoading {
+                        ProgressView()
                     } else {
                         Text("Subscribe")
                             .font(.caption.weight(.semibold))

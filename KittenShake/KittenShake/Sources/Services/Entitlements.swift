@@ -1,6 +1,40 @@
 import Foundation
 import StoreKit
 import Combine
+import os
+
+/// The underlying cause `Product.products(for:)` can fail for silently:
+/// on TestFlight, an App Store Connect-side misconfiguration (agreement not
+/// signed, product not yet propagated, etc.) makes StoreKit return an
+/// *empty* array rather than throwing — so an empty result is treated as a
+/// failure here, not as "no product yet".
+private enum ProductLoadError: Error, LocalizedError {
+    case notFound
+
+    var errorDescription: String? {
+        "Product.products(for:) returned no matching product (App Store Connect configuration issue, or not yet propagated)."
+    }
+}
+
+/// Loading state for the StoreKit product backing the paywall, tracked
+/// separately from `product` itself so the UI can distinguish "still
+/// loading", "loaded", and "failed" instead of inferring failure from
+/// `product == nil`, which can't be told apart from "hasn't loaded yet".
+enum ProductLoadState {
+    case loading
+    case loaded
+    case failed(Error?)
+
+    var isLoading: Bool {
+        if case .loading = self { return true }
+        return false
+    }
+
+    var isFailed: Bool {
+        if case .failed = self { return true }
+        return false
+    }
+}
 
 /// Observable subscription state for "Infinite Kittens", backed by
 /// StoreKit 2. Loads the monthly auto-renewable product, listens for
@@ -14,9 +48,12 @@ final class Entitlements: ObservableObject {
 
     static let productID = "com.kenzoragames.KittenShake.infinitekittens.monthly"
 
+    private static let logger = Logger(subsystem: "com.kenzoragames.KittenShake", category: "Entitlements")
+
     @Published private(set) var isSubscriber: Bool = false
     @Published private(set) var product: Product?
     @Published private(set) var isLoadingProduct = false
+    @Published private(set) var productLoadState: ProductLoadState = .loading
     @Published private(set) var purchaseInProgress = false
     @Published var lastError: String?
 
@@ -26,6 +63,8 @@ final class Entitlements: ObservableObject {
     @Published private(set) var currentTransactionJWS: String?
 
     private var updatesTask: Task<Void, Never>?
+    private var autoRetryTask: Task<Void, Never>?
+    private var hasAutoRetried = false
     private let isForcedForVerification = UITestSupport.forceSubscriber
 
     private init() {
@@ -41,6 +80,7 @@ final class Entitlements: ObservableObject {
 
     deinit {
         updatesTask?.cancel()
+        autoRetryTask?.cancel()
     }
 
     var priceText: String {
@@ -48,14 +88,56 @@ final class Entitlements: ObservableObject {
     }
 
     func loadProduct() async {
-        guard product == nil else { return }
+        guard product == nil else {
+            productLoadState = .loaded
+            return
+        }
         isLoadingProduct = true
+        productLoadState = .loading
         defer { isLoadingProduct = false }
         do {
             let products = try await Product.products(for: [Self.productID])
-            product = products.first
+            guard let loaded = products.first else {
+                // Not thrown by StoreKit — Product.products(for:) returns an
+                // empty array (rather than an error) when App Store Connect
+                // hasn't propagated the product, which is what we see on
+                // TestFlight. Treat that the same as a thrown failure so the
+                // paywall can surface it instead of silently doing nothing.
+                throw ProductLoadError.notFound
+            }
+            product = loaded
+            productLoadState = .loaded
+            lastError = nil
         } catch {
+            Self.logger.error("StoreKit product load failed for \(Self.productID, privacy: .public): \(String(describing: error), privacy: .public)")
             lastError = "Couldn't load subscription details. Check your connection and try again."
+            productLoadState = .failed(error)
+            scheduleAutoRetryIfNeeded()
+        }
+    }
+
+    /// User-initiated retry (e.g. tapping "Try Again" on the paywall's error
+    /// card). Re-enters `loadProduct()`, which will retry the StoreKit call
+    /// since `product` is still nil.
+    func retryLoad() {
+        autoRetryTask?.cancel()
+        Task { await loadProduct() }
+    }
+
+    /// Automatically retries once, ~2s after the first failure, to smooth
+    /// over transient network blips without the user having to notice and
+    /// tap "Try Again" themselves. Only fires once per app session; after
+    /// that, failures require an explicit retry.
+    private func scheduleAutoRetryIfNeeded() {
+        guard !hasAutoRetried else { return }
+        hasAutoRetried = true
+        autoRetryTask?.cancel()
+        autoRetryTask = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
+            guard let self, !Task.isCancelled else { return }
+            if case .failed = self.productLoadState {
+                await self.loadProduct()
+            }
         }
     }
 
